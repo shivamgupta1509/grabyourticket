@@ -1,0 +1,14 @@
+/* Header css */
+.jumbotron{
+    background-color: #0779e4;
+    /* border-style: groove; */
+    border-color: #a3d8f4;
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.4);
+}
+.quote{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: cursive;
+    color: #ffffff;
+}
