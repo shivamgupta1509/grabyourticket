@@ -32,7 +32,7 @@ body {
 .fa-exchange-alt {
   position: absolute;
   top: 20px;
-  left: 221px;
+  left: 240px; /* left: 221px; */
 }
 
 .bus-search-form input {
