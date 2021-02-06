@@ -120,10 +120,10 @@ body {
   float: right;
 }
 
-span {
+/* span {
   color: black;
   font-size: 1.4em;
-}
+} */
 
 /* Hotel_System_CSS_Start */
 .jumbotron {
@@ -238,3 +238,140 @@ hr{
   color: orange;
 }
 /* Hotel_system_CSS_end */
+
+/* ****************************************************************************************************
+__________________________________________________Index Page____________________________________________
+**************************************************************************************************** */
+.logo h2{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bold;
+  color:white;
+  background: -webkit-linear-gradient(#940370 , #FFFFFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-menu{
+  color:white;
+}
+.nav-menu:hover{
+  transform: scale(1.04);
+}
+nav{
+  background-color: #4f093e;
+}
+.indexdiv1{
+  height: 450px;
+  background-image: url("https://5.imimg.com/data5/PI/RW/GLADMIN-55149533/domestic-air-travel-bookings-500x500.png");
+  background-repeat: no-repeat;
+}
+.indexdiv1:hover{
+  transform: scale(1.01);
+}
+.indexdiv1 h1{
+  color:blue;
+}
+.indexdiv1 h3{
+  color:#ca19d4;
+}
+.indexdiv1 h2{
+  color:#007ea1;
+}
+button:hover{
+    transform: scale(1.08);
+}
+.indexdiv2{
+  height: 470px;
+  background-image: url("../images/index_flight.jpg");
+  background-repeat: no-repeat;
+  background-position: 770px 0px;
+  background-color: #13afba;
+}
+.indexdiv2:hover{
+  transform: scale(1.01);
+}
+.indexdiv2 h1{
+  color:red;
+}
+.indexdiv2 h3{
+  color:#FFFFFF;
+}
+.padding-top{
+  padding-top: 100px;
+}
+.indexdiv3{
+  height: 400px;
+  background-image: url("../images/index_train.jpg");
+  background-repeat: no-repeat;
+  background-position: 100px 0px;
+}
+.indexdiv3:hover{
+  transform: scale(1.01);
+}
+.indexdiv3 h1{
+  color:blue;
+}
+.indexdiv3 h3{
+  color:red;
+}
+.indexdiv4{
+  height: 470px;
+  background-image: url("../images/index_bus.jpg");
+  background-repeat: no-repeat;
+  background-position: 550px 0px;
+  background-color: #1f547a;
+}
+.indexdiv4:hover{
+  transform: scale(1.01);
+}
+.indexdiv4 h1{
+  color:#FFFFFF;
+}
+.indexdiv4 h3{
+  color:#c3d900;
+}
+.indexdiv5{
+  height: 400px;
+  background-image: url("../images/index_hotel.jpg");
+  background-repeat: no-repeat;
+  background-position: 100px 0px;
+}
+.indexdiv5:hover{
+  transform: scale(1.01);
+}
+.indexdiv5 h1{
+  color:red;
+}
+.indexdiv5 h3{
+  color:blue;
+}
+footer{
+  background-color: #400632;
+  color:#FFFFFF !important;
+}
+.indexdiv6{
+  height: 170px;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-color: #4568a1;
+  color: white;
+}
+.indexdiv7{
+  background-color: white;
+  height: 270px;
+  padding-top: 100px;
+}
+.serviceimg:hover{
+  transform: scale(1.09);
+}
+/* ****************************************************************************************************
+___________________________________Login Page / SignUp Page____________________________________________
+**************************************************************************************************** */
+.logindiv{
+  height: 700px;
+  background-image: url("https://youthmentors.shinefromwithin.com.au/wp-content/uploads/2016/10/login-page-background-image-3-2.png");
+  background-repeat: no-repeat;
+}
+.login-card:hover{
+  transform: scale(1.09);
+}
