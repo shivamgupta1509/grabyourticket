@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+#bus-form {
+  margin: 0px;
+  padding: 0px;
+  height: 225px;
+  background-color: #3184ee;
+}
+
+.fa-bus {
+  margin-right: 10px;
+}
+
+.online-bus-heading {
+  text-align: center;
+  color: white;
+  padding: 30px;
+  font-size: 2.2em;
+}
+
+.flight-search-form {
+  width: 1050px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.flight-search-form input {
+  height: 60px;
+  border: 0px;
+  padding-left: 15px;
+  border-right: 1px inset rgba(0, 0, 0, 0.315);
+  float: left;
+}
+
+.bus-search-form {
+  width: 850px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.fa-exchange-alt {
+  position: absolute;
+  top: 20px;
+  left: 221px;
+}
+
+.bus-search-form input {
+  height: 60px;
+  border: 0px;
+  padding-left: 15px;
+  border-right: 1px inset rgba(0, 0, 0, 0.315);
+  float: left;
+}
+
+.bus-search-form input:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.bus-search-form input {
+  outline: none;
+}
+
+.search-bus-button {
+  -webkit-border-top-right-radius: 6;
+  -moz-border-top-right-radius: 6;
+  -webkit-border-bottom-right-radius: 6;
+  -moz-border-bottom-right-radius: 6;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 60px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #ef6614;
+  padding: 10px 20px 10px 20px;
+  float: left;
+  text-decoration: none;
+}
+
+.search-bus-button:hover {
+  background: #ef6414e1;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#grab-your-ticket-bus {
+  margin-top: 60px;
+}
+
+.grab-your-ticket-bus-cards .card {
+  /* box-shadow: 3px 3px 5px 6px #ccc; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.grab-your-ticket-bus-heading {
+  text-align: center;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+}
+
+.grab-your-ticket-bus-cards .card-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.grab-your-ticket-bus-cards .card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06); */
+}
+
+#bus-qna {
+  margin-top: 60px;
+}
+
+.bus-faq-heading {
+  text-align: center;
+  font-size: 2.1em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.bus-accordion i {
+  float: right;
+}
+
+span {
+  color: black;
+  font-size: 1.4em;
+}
+
+/* Header css */
+.jumbotron {
+  background-color: #0779e4;
+  /* border-style: groove; */
+  border-color: #a3d8f4;
+  box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.4);
+}
+.quote {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: cursive;
+  color: #ffffff;
+}
+
+
+footer {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
+  background-color: #3333ff;
+  color: white;
+}
+
+.fa-facebook:hover {
+  color:#faf214;
+}
+.fa-twitter:hover {
+  color:#faf214;
+}
+.fa-linkedin:hover {
+  color:#faf214;
+}
+.fa-rss:hover {
+  color:#faf214;
+}
+.fa-behance:hover {
+  color:#faf214;
+}
+.fa-instagram:hover {
+  color:#faf214;
+}
