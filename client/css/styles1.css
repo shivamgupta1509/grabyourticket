@@ -24,7 +24,7 @@ body {
 }
 
 .flight-search-form {
-  width: 1050px;
+  width: 1100px;
   margin: 0 auto;
   position: relative;
 }
@@ -154,7 +154,6 @@ span {
   color: #ffffff;
 }
 
-
 footer {
   margin-top: 10px;
   font-size: 20px;
@@ -165,20 +164,20 @@ footer {
 }
 
 .fa-facebook:hover {
-  color:#faf214;
+  color: #faf214;
 }
 .fa-twitter:hover {
-  color:#faf214;
+  color: #faf214;
 }
 .fa-linkedin:hover {
-  color:#faf214;
+  color: #faf214;
 }
 .fa-rss:hover {
-  color:#faf214;
+  color: #faf214;
 }
 .fa-behance:hover {
-  color:#faf214;
+  color: #faf214;
 }
 .fa-instagram:hover {
-  color:#faf214;
+  color: #faf214;
 }
