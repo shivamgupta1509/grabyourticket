@@ -14,15 +14,19 @@
         loginCtrl.login = function () {
             var response = AuthenticationService.signin(loginCtrl.username, loginCtrl.password);
             response.then(data => {
-                if (data.successLogin) {
-                    $window.localStorage.setItem('username', loginCtrl.username);
-                    $location.path('home');
-                } else {
+                if (data.status == 401) {
+                    alert("Invalid Username or Password");
                     $location.path('login');
+                } else if (data.login) {
+                    $window.localStorage.setItem('username', loginCtrl.username);
+                    alert("LoggedIn Successfully");
+                    $location.path('home');
                 }
             })
                 .catch(error => {
-                    console.log(error);
+                    if (error.status == 401) {
+                        alert("Invalid Username or Password");
+                    }
                 })
         }
     }

@@ -23,7 +23,7 @@
 
         service.signin = function (username, password) {
             const data = {
-                email: username,
+                username: username,
                 password: password
             };
             return $http.post(ServerUrl + '/login', data)

@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const User = require("./models/users")
 const LocalStrategy = require("passport-local")
 const cors = require("cors");
+const passport = require("passport");
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
@@ -41,10 +42,6 @@ app.get("/", (req, res) => {
     res.send("this is get route of /")
 });
 
-app.get("/register", (req, res) => {
-    res.send("This is get route of /register");
-});
-
 app.post("/register", (req, res) => {
     var fullname = req.body.name;
     var username = req.body.email;
@@ -59,32 +56,29 @@ app.post("/register", (req, res) => {
                 console.log(err);
                 return res.json({ error: err });
             } else {
-                // passport.authenticate("local", {
-                //     successRedirect: "/",
-                //     failureRedirect: "/register",
-                // })(req, res);
-                // passport.authenticate("local")(req, res, () => {
-                //     console.log(user);
-                // })
                 return res.json({ "register": true, user: user });
 
             }
-
         });
     }
 });
 
-app.get("/login", (req, res) => {
-    res.send("This is get route of /login");
+app.post("/login", (req, res) => {
+    const newUser = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
+    req.logIn(newUser, (err) => {
+        if (err) {
+            return res.json({ error: err });
+        } else {
+            passport.authenticate("local")(req, res, () => {
+                console.log("Req User: ", req.user);
+                res.send({ login: true });
+            })
+        }
+    })
 });
-
-app.post("/login", passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login"
-}), function (req, res) {
-    res.json({ "login": "true" });
-}
-);
 
 app.get("/logout", function (req, res) {
     req.logout();
