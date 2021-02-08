@@ -8,13 +8,14 @@
     function AuthenticationService($http, ServerUrl, $window) {
         var service = this;
 
-        service.signup = function (fullName, username, password) {
+        service.signup = function (fullName, username, password, confirmPassword) {
             const data = {
                 name: fullName,
                 email: username,
-                password: password
+                password1: password,
+                password2: confirmPassword
             };
-            return $http.post(ServerUrl + '/signup', data)
+            return $http.post(ServerUrl + '/register', data)
                 .then(response => {
                     return response.data;
                 })
