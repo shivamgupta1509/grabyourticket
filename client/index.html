@@ -1,35 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="GrabYourTicketApp">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grab Your Ticket</title>
-    <!-- Bootstrapcdn -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/5130183192.js" crossorigin="anonymous"></script>
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grab Your Ticket</title>
+  <!-- Bootstrapcdn -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5130183192.js" crossorigin="anonymous"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles1.css">
+
+  <!-- Javascript Link -->
+
+  <!-- Lib Module -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+
+  <!-- Module -->
+  <script src="src/grabyourticket.module.js"></script>
+
+  <!-- Routes -->
+  <script src="src/routes.js"></script>
+
+  <!-- Artifacts -->
+  <script src="src/spinner/spinner.component.js"></script>
+  <script src="src/spinner/spinner.interceptor.js"></script>
+
+  <!-- Authentication Controller -->
+  <script src="src/authentication/signup.controller.js"></script>
+  <script src="src/authentication/login.controller.js"></script>
+
+  <!-- Authentication Service -->
+  <script src="src/authentication/authentication.service.js"></script>
+
+  <!-- Main Controller -->
+  <script src="src/main.controller.js"></script>
+
 </head>
 
-<body>
+<body ng-controller="MainController as mainCtrl">
 
+  <loading-spinner-component class="loading-indicator"></loading-spinner-component>
+
+  <nav class="navbar navbar-light">
+    <span class="navbar-brand mb-0 logo"><a ui-sref="home" style="text-decoration:none; color:white;">
+        <h2><i class="fa fa-ticket"></i>GrabYourTicket</h2>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="flight-search" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-plane"></i> Flights</h4>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="train-search" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-train"></i> Trains</h4>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="bus-search" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-bus"></i> Bus</h4>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="hotel-search" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-hotel"></i> Hotels</h4>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="login" ng-if="!mainCtrl.showUsername" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-sign-in"></i> Login</h4>
+      </a></span>
+    <span ng-if="mainCtrl.showUsername">{{mainCtrl.username}}</span>
+  </nav>
+
+  <ui-view></ui-view>
+
+  <footer>
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-5 mt-5">
+          <h5><span class="fa fa-map-marker fa-1x" aria-hidden="true"></span> Thakur College of Engineering and
+            Technology, Kandivali (E), Mumbai, Maharashtra, India</h5><br>
+          <h5><span class="fa fa-phone fa-1x" aria-hidden="true"></span> +91-9000400999</h5><br>
+          <h5><span class="fa fa-envelope fa-1x" aria-hidden="true"></span> grabyourticket@gmail.com</h5>
+        </div>
+        <div class="col-3 offset-sm-4 mt-5">
+          <h5>Follow Us:</h5>
+          <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
+            <i class="fa fa-facebook fa-lg"></i>
+          </a>
+          <a class="footer-anchor" href="mailto:bingesort7@gmail.com" style="text-decoration:none; color:white;">
+            <i class="fa fa-envelope-o fa-lg"></i>
+          </a>
+          <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
+            <i class="fa fa-twitter fa-lg"></i>
+          </a>
+          <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
+            <i class="fa fa-instagram fa-lg"></i>
+          </a><br><br><br>
+        </div>
+        <div class="offset-sm-4 mt-4 mb-4">Copyright&#169;2020 @GrabYourTicket -- Made In India</div>
+      </div>
+
+    </div>
+  </footer>
 </body>
 
 <!-- Js jquery,popper links -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 <!-- <script src="./js/angular.min.js"></script> -->
 <script src="./js/script.js"></script>
