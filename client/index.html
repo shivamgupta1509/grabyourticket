@@ -1,167 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="GrabYourTicketApp">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grab Your Ticket</title>
-    <!-- Bootstrapcdn -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/5130183192.js" crossorigin="anonymous"></script>
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grab Your Ticket</title>
+  <!-- Bootstrapcdn -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5130183192.js" crossorigin="anonymous"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles1.css">
+
+  <!-- Javascript Link -->
+
+  <!-- Lib Module -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+
+  <!-- Module -->
+  <script src="src/grabyourticket.module.js"></script>
+
+  <!-- Routes -->
+  <script src="src/routes.js"></script>
+
+  <!-- Artifacts -->
+  <script src="src/spinner/spinner.component.js"></script>
+  <script src="src/spinner/spinner.interceptor.js"></script>
+
+  <!-- Authentication Controller -->
+  <script src="src/authentication/signup.controller.js"></script>
+  <script src="src/authentication/login.controller.js"></script>
+
+  <!-- Authentication Service -->
+  <script src="src/authentication/authentication.service.js"></script>
+
+  <!-- Main Controller -->
+  <script src="src/main.controller.js"></script>
+
 </head>
 
-<body>
-    <nav class="navbar navbar-light">
-        <span class="navbar-brand mb-0 logo"><a href="#" style="text-decoration:none; color:white;"><h2><i class="fa fa-ticket"></i>GrabYourTicket</h2></a></span>
-        <span class="nav-menu"><a href="#" style="text-decoration:none; color:white;"><h4><i class="fa fa-plane"></i> Flights</h4></a></span>
-        <span class="nav-menu"><a href="#" style="text-decoration:none; color:white;"><h4><i class="fa fa-train"></i> Trains</h4></a></span>
-        <span class="nav-menu"><a href="#" style="text-decoration:none; color:white;"><h4><i class="fa fa-bus"></i> Bus</h4></a></span>
-        <span class="nav-menu"><a href="#" style="text-decoration:none; color:white;"><h4><i class="fa fa-hotel"></i> Hotels</h4></a></span>
-        <span class="nav-menu"><a href="login.html" style="text-decoration:none; color:white;"><h4><i class="fa fa-sign-in"></i> Login</h4></a></span>
-      </nav>
-    <div class="container indexdiv1">
-      <div class="row mt-5">
-        <div class="col-6 offset-sm-6 mt-4">
-          <h1>MAKE YOUR RESERVATION</h1>
-          <h2 class="mt-3">Enjoy Hassle-free Booking Process</h2>
-          <h3 class="mt-3">Search Lowest Fare With Exciting Deals</h3>
-          <a href="#SERVICES"> <button type="button" class="btn btn-primary btn-lg mt-2"><strong>BOOK NOW</strong></button></a>
-        </div>
-      </div>
-    </div>
-    <div class="indexdiv2">
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col-6 mt-4 padding-top">
-            <h1>BOOK YOUR FLIGHT</h1>
-            <h3 class="mt-3">Search Lowest AirFare With Exciting Deals</h3>
-            <button type="button" class="btn btn-danger btn-lg mt-2"><strong>BOOK NOW</strong></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="indexdiv3">
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col-5 offset-sm-7 mt-4">
-            <h1>BOOK YOUR RAILWAY TICKETS</h1>
-            <h3 class="mt-3">Get Lowest Fare With Early Booking</h3>
-            <button type="button" class="btn btn-primary btn-lg mt-2"><strong>BOOK NOW</strong></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="indexdiv4">
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col-6 mt-4 padding-top">
-            <h1>BOOK YOUR BUS TICKETS ONLINE</h1>
-            <h3 class="mt-3">Wide choice of bus seats, bus types & operators</h3>
-            <button type="button" class="btn btn-light btn-lg mt-2"><strong>BOOK NOW</strong></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="indexdiv5">
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col-5 offset-sm-7 mt-4">
-            <h1>BOOK YOUR IDEAL HOTEL</h1>
-            <h3 class="mt-3">Find deals on hotels, homes and much more...</h3>
-            <button type="button" class="btn btn-danger btn-lg mt-2"><strong>BOOK NOW</strong></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="SERVICES">
-      <div class="indexdiv6">
-        <div class="container">
-          <h1 class="d-flex justify-content-center mt-5 mb-5">Why Book With Us?</h1>
-          <div class="row">
-            <div class="col-4 d-flex justify-content-center serviceimg">
-              <img src="./images/service1.png" alt="Image Not available">
-            </div>
-            <div class="col-4 d-flex justify-content-center serviceimg">
-              <img src="./images/service2.png" alt="Image Not available">
-            </div>
-            <div class="col-4 d-flex justify-content-center serviceimg">
-              <img src="./images/service3.png" alt="Image not avilable">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="indexdiv7">
-        <div class="container">
-          <div class="row">
-            <div class="col-2 offset-md-1">
-              <div class=" serviceimg">
-                <h5 class="d-flex justify-content-center"><b>EASY BOOKING</b></h5>
-                <center class="d-flex justify-content-center"><h6>We offer easy and convenient flight bookings with attractive offers.</h6></center>
-              </div>
-            </div>
-            <div class="col-2 offset-md-2">
-              <div class=" serviceimg">
-                <h5 class="d-flex justify-content-center"><b>LOWEST PRICE</b></h5>
-                <center class="d-flex justify-content-center"><h6>We ensure low rates on hotel reservation, holiday packages and on flight tickets.</h6></center>
-              </div>
-            </div>
-            <div class="col-2 offset-md-2">
-              <div class=" serviceimg">
-                <h5 class="d-flex justify-content-center"><b>EXCITING DEALS</b></h5>
-                <center class="d-flex justify-content-center"><h6>Enjoy exciting deals on flights, hotels, buses and tour packages.</h6></center>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<body ng-controller="MainController as mainCtrl">
 
-    <footer>
-      <div class="container">
-        <div class="row mt-4">
-          <div class="col-5 mt-5">
-            <h5><span class="fa fa-map-marker fa-1x" aria-hidden="true"></span> Thakur College of Engineering and Technology, Kandivali (E), Mumbai, Maharashtra, India</h5><br>
-            <h5><span class="fa fa-phone fa-1x" aria-hidden="true"></span> +91-9000400999</h5><br>
-            <h5><span class="fa fa-envelope fa-1x" aria-hidden="true"></span> grabyourticket@gmail.com</h5>
-          </div>
-          <div class="col-3 offset-sm-4 mt-5">
-            <h5>Follow Us:</h5>
-            <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
-      	      <i class="fa fa-facebook fa-lg"></i>
-      	    </a>
-      	    <a class="footer-anchor" href="mailto:bingesort7@gmail.com" style="text-decoration:none; color:white;">
-      	      <i class="fa fa-envelope-o fa-lg"></i>
-      	    </a>
-      	    <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
-      	      <i class="fa fa-twitter fa-lg"></i>
-      	    </a>
-      	    <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
-      	      <i class="fa fa-instagram fa-lg"></i>
-      	    </a><br><br><br>
-          </div>
-          <div class="offset-sm-4 mt-4 mb-4">Copyright&#169;2020 @GrabYourTicket -- Made In India</div>
-        </div>
+  <loading-spinner-component class="loading-indicator"></loading-spinner-component>
 
+  <nav class="navbar navbar-light">
+    <span class="navbar-brand mb-0 logo"><a ui-sref="home" style="text-decoration:none; color:white;">
+        <h2><i class="fa fa-ticket"></i>GrabYourTicket</h2>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="flight-search" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-plane"></i> Flights</h4>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="train-search" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-train"></i> Trains</h4>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="bus-search" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-bus"></i> Bus</h4>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="hotel-search" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-hotel"></i> Hotels</h4>
+      </a></span>
+    <span class="nav-menu"><a ui-sref="login" ng-if="!mainCtrl.showUsername" ui-sref-active="active-tab"
+        style="text-decoration:none; color:white;">
+        <h4><i class="fa fa-sign-in"></i> Login</h4>
+      </a></span>
+    <span ng-if="mainCtrl.showUsername">{{mainCtrl.username}}</span>
+  </nav>
+
+  <ui-view></ui-view>
+
+  <footer>
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-5 mt-5">
+          <h5><span class="fa fa-map-marker fa-1x" aria-hidden="true"></span> Thakur College of Engineering and
+            Technology, Kandivali (E), Mumbai, Maharashtra, India</h5><br>
+          <h5><span class="fa fa-phone fa-1x" aria-hidden="true"></span> +91-9000400999</h5><br>
+          <h5><span class="fa fa-envelope fa-1x" aria-hidden="true"></span> grabyourticket@gmail.com</h5>
+        </div>
+        <div class="col-3 offset-sm-4 mt-5">
+          <h5>Follow Us:</h5>
+          <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
+            <i class="fa fa-facebook fa-lg"></i>
+          </a>
+          <a class="footer-anchor" href="mailto:bingesort7@gmail.com" style="text-decoration:none; color:white;">
+            <i class="fa fa-envelope-o fa-lg"></i>
+          </a>
+          <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
+            <i class="fa fa-twitter fa-lg"></i>
+          </a>
+          <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
+            <i class="fa fa-instagram fa-lg"></i>
+          </a><br><br><br>
+        </div>
+        <div class="offset-sm-4 mt-4 mb-4">Copyright&#169;2020 @GrabYourTicket -- Made In India</div>
       </div>
-    </footer>
+
+    </div>
+  </footer>
 </body>
 
 <!-- Js jquery,popper links -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 <!-- <script src="./js/angular.min.js"></script> -->
 <script src="./js/script.js"></script>
