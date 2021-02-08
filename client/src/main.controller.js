@@ -4,16 +4,18 @@
     angular.module('GrabYourTicketApp')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['AuthenticationService'];
-    function MainController(AuthenticationService) {
+    MainController.$inject = ['AuthenticationService', '$rootScope'];
+    function MainController(AuthenticationService, $rootScope) {
         var mainCtrl = this;
-        mainCtrl.showUsername = false;
-        mainCtrl.username = AuthenticationService.getLoggedInUser();
-        if (mainCtrl.username === undefined) {
-            mainCtrl.username = false
-        } else {
-            mainCtrl.username = true
-        }
 
+        mainCtrl.logout = function () {
+            var response = AuthenticationService.logout();
+            response.then(data => {
+                if (data.logout) {
+                    delete sessionStorage.user;
+                    $rootScope.user = undefined;
+                }
+            })
+        }
     }
 })();
