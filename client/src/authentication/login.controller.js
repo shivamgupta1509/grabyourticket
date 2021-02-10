@@ -4,8 +4,8 @@
     angular.module("GrabYourTicketApp")
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['AuthenticationService', '$location', '$window', '$rootScope'];
-    function LoginController(AuthenticationService, $location, $window, $rootScope) {
+    LoginController.$inject = ['AuthenticationService', '$location', '$scope', '$rootScope'];
+    function LoginController(AuthenticationService, $location, $scope, $rootScope) {
         var loginCtrl = this;
 
         loginCtrl.username = "";
@@ -21,13 +21,13 @@
                     // $window.localStorage.setItem('username', loginCtrl.username);
                     sessionStorage.user = data.user;
                     $rootScope.user = data.user;
-                    alert("LoggedIn Successfully");
+                    swal("LoggedIn Successfully!", "Click the Below Button!", "success");
                     $location.path('home');
                 }
             })
                 .catch(error => {
                     if (error.status == 401) {
-                        alert("Invalid Username or Password");
+                        swal("Invalid Username or Password", "Click the below button :)", "error");
                     }
                 })
         }

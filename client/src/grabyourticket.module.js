@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module("GrabYourTicketApp", ['ui.router'])
+    angular.module("GrabYourTicketApp", ['ui.router', 'sweetalert'])
         .constant('ServerUrl', 'http://localhost:5000')
         .config(config);
 

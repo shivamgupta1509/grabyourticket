@@ -14,6 +14,7 @@
                 if (data.logout) {
                     delete sessionStorage.user;
                     $rootScope.user = undefined;
+                    swal("LoggedOut Successfully!", "Click the Below Button!", "success");
                 }
             })
         }
