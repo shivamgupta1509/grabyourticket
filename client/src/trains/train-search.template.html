@@ -3,32 +3,77 @@
         <h4 class="online-bus-heading"><i class="fa fa-train" aria-hidden="true"></i>Online Train Ticket</h4>
         <div class="bus-search-form">
             <i class="fas fa-exchange-alt"></i>
-            <form action="" method="">
-                <input list="source-cities" name="source-city" id="source-city" placeholder="Source City">
+            <form ng-submit="trainCtrl.searchTrain()" method="POST">
+                <input list="source-cities" name="source-city" ng-model="trainCtrl.sourceName" id="source-city"
+                    placeholder="Source City">
                 <datalist id="source-cities">
-                    <option value="Banglore"></option>
-                    <option value="Chennai"></option>
-                    <option value="Delhi"></option>
-                    <option value="Goa"></option>
-                    <option value="Hyderabad"></option>
-                    <option value="Kolkata"></option>
-                    <option value="Mumbai"></option>
-                    <option value="Pune"></option>
+                    <option value="NEW DELHI-NDLS"></option>
+                    <option value="HOWRAH-HWH"></option>
+                    <option value="SECUNDERABAD-SC"></option>
+                    <option value="PUNE-PUNE"></option>
+                    <option value="AHMEDABAD-ADI"></option>
+                    <option value="LOKMANYA-LTT"></option>
+                    <option value="NIZAMUDDIN-NZM"></option>
+                    <option value="CHATTRAPATI SHIVAJI MAHARAJ TERMINUS-CSMT"></option>
+                    <option value="JAIPUR-JP"></option>
+                    <option value="Anand VIHAN-ANVT"></option>
+                    <option value="BANDRA TERMINUS-BDTS"></option>
+                    <option value="VIJAYAWADA-BZA"></option>
+                    <option value="PATNA-PNBE"></option>
+                    <option value="MUMBAI CENTRAL-MMCT"></option>
+                    <option value="BHOPAL-BPL"></option>
+                    <option value="NAGPUR-NGP"></option>
+                    <option value="LUCKNOW-LKO"></option>
+                    <option value="VARANASI-BSB"></option>
+                    <option value="KANPUR-CNB"></option>
+                    <option value="GORAKHPUR-GKP"></option>
+                    <option value="JABALPUR-JBP"></option>
+                    <option value="THANE-TNA"></option>
+                    <option value="DADAR-DR"></option>
+                    <option value="RANCHI-RNC"></option>
+                    <option value="JHANSI-JHS"></option>
+                    <option value="GHAZIABAD-GZB"></option>
+                    <option value="AMRITSAR-ASR"></option>
+                    <option value="KOLKATA-KOAA"></option>
+                    <option value="MATHURA-MTJ"></option>
+                    <option value="HYDERABAD-HBJ"></option>
                 </datalist>
-                <input list="destination-cities" name="destination-city" id="destination-city"
-                    placeholder="Destination City">
+                <input list="destination-cities" name="destination-city" ng-model="trainCtrl.destinationName"
+                    id="destination-city" placeholder="Destination City">
                 <datalist id="destination-cities">
-                    <option value="Banglore"></option>
-                    <option value="Chennai"></option>
-                    <option value="Delhi"></option>
-                    <option value="Goa"></option>
-                    <option value="Hyderabad"></option>
-                    <option value="Kolkata"></option>
-                    <option value="Mumbai"></option>
-                    <option value="Pune"></option>
+                    <option value="NEW DELHI-NDLS"></option>
+                    <option value="HOWRAH-HWH"></option>
+                    <option value="SECUNDERABAD-SC"></option>
+                    <option value="PUNE-PUNE"></option>
+                    <option value="AHMEDABAD-ADI"></option>
+                    <option value="LOKMANYA-LTT"></option>
+                    <option value="NIZAMUDDIN-NZM"></option>
+                    <option value="CHATTRAPATI SHIVAJI MAHARAJ TERMINUS-CSMT"></option>
+                    <option value="JAIPUR-JP"></option>
+                    <option value="Anand VIHAN-ANVT"></option>
+                    <option value="BANDRA TERMINUS-BDTS"></option>
+                    <option value="VIJAYAWADA-BZA"></option>
+                    <option value="PATNA-PNBE"></option>
+                    <option value="MUMBAI CENTRAL-MMCT"></option>
+                    <option value="BHOPAL-BPL"></option>
+                    <option value="NAGPUR-NGP"></option>
+                    <option value="LUCKNOW-LKO"></option>
+                    <option value="VARANASI-BSB"></option>
+                    <option value="KANPUR-CNB"></option>
+                    <option value="GORAKHPUR-GKP"></option>
+                    <option value="JABALPUR-JBP"></option>
+                    <option value="THANE-TNA"></option>
+                    <option value="DADAR-DR"></option>
+                    <option value="RANCHI-RNC"></option>
+                    <option value="JHANSI-JHS"></option>
+                    <option value="GHAZIABAD-GZB"></option>
+                    <option value="AMRITSAR-ASR"></option>
+                    <option value="KOLKATA-KOAA"></option>
+                    <option value="MATHURA-MTJ"></option>
+                    <option value="HYDERABAD-HBJ"></option>
                 </datalist>
-                <input type="date" name="date-of-travel" placeholder="dd-mm-yyyy">
-                <button type="button" class="btn search-bus-button">
+                <input type="date" name="date-of-travel" ng-model="trainCtrl.date" placeholder="dd-mm-yyyy">
+                <button type="submit" class="btn search-bus-button">
                     <i class="fas fa-search"></i>
                     Search Train
                 </button>
