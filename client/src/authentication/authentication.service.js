@@ -32,6 +32,13 @@
                 })
         }
 
+        service.logout = function () {
+            return $http.get(ServerUrl + '/logout')
+                .then(response => {
+                    return response.data;
+                });
+        }
+
         service.getLoggedInUser = function () {
             return $window.localStorage.getItem('username');
         }

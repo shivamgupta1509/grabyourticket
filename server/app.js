@@ -6,6 +6,7 @@ const User = require("./models/users")
 const LocalStrategy = require("passport-local")
 const cors = require("cors");
 const passport = require("passport");
+const session = require("express-session");
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
@@ -21,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 mongoose.set("useCreateIndex", true);
 mongoose.set('useFindAndModify', false);
 
-app.use(require("express-session")({
+app.use(session({
     secret: "Option",
     resave: false,
     saveUninitialized: false,
@@ -37,6 +38,7 @@ app.use(function (req, res, next) {
     res.locals.currentUser = req.user;
     next();
 });
+
 
 app.get("/", (req, res) => {
     res.send("this is get route of /")
@@ -97,8 +99,8 @@ app.post("/login", (req, res) => {
             return res.json({ error: err });
         } else {
             passport.authenticate("local")(req, res, () => {
-                console.log("Req User: ", req.user);
-                res.send({ login: true });
+                req.session.user = req.user;
+                res.send({ login: true, user: req.session.user.username });
             })
         }
     })
@@ -106,7 +108,7 @@ app.post("/login", (req, res) => {
 
 app.get("/logout", function (req, res) {
     req.logout();
-    res.redirect("/");
+    res.json({ logout: true });
 });
 
 app.listen(PORT, () => {
