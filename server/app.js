@@ -42,6 +42,30 @@ app.get("/", (req, res) => {
     res.send("this is get route of /")
 });
 
+// This is for train api
+var unirest = require("unirest");
+
+var req = unirest("POST", "https://trains.p.rapidapi.com/");
+
+req.headers({
+	"content-type": "application/json",
+	"x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
+	"x-rapidapi-host": "trains.p.rapidapi.com",
+	"useQueryString": true
+});
+
+req.type("json");
+req.send({
+	"search": "Lokmanya"
+});
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
+// Train api ended here
+
 app.post("/register", (req, res) => {
     var fullname = req.body.name;
     var username = req.body.email;
