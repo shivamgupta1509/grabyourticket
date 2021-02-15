@@ -6,6 +6,7 @@ const User = require("./models/users")
 const LocalStrategy = require("passport-local")
 const cors = require("cors");
 const passport = require("passport");
+var unirest = require("unirest");
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
@@ -42,29 +43,32 @@ app.get("/", (req, res) => {
     res.send("this is get route of /")
 });
 
-// This is for train api
-var unirest = require("unirest");
+app.post("/search_train", (req, res) =>{
+    var train_search = req.body.train_search;
 
-var req = unirest("POST", "https://trains.p.rapidapi.com/");
+    if(train_search != ""){
+        var req = unirest("POST", "https://trains.p.rapidapi.com/");
 
-req.headers({
-	"content-type": "application/json",
-	"x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
-	"x-rapidapi-host": "trains.p.rapidapi.com",
-	"useQueryString": true
+        req.headers({
+            "content-type": "application/json",
+            "x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
+            "x-rapidapi-host": "trains.p.rapidapi.com",
+            "useQueryString": true
+        });
+
+        req.type("json");
+
+        req.send({
+            "search": train_search
+        });
+
+        req.end(function (res) {
+            if (res.error) throw new Error(res.error);
+            var output = res.body;
+            console.log(output[0]);
+        });
+    }
 });
-
-req.type("json");
-req.send({
-	"search": "Lokmanya"
-});
-
-req.end(function (res) {
-	if (res.error) throw new Error(res.error);
-
-	console.log(res.body);
-});
-// Train api ended here
 
 app.post("/register", (req, res) => {
     var fullname = req.body.name;
