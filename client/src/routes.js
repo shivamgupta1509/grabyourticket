@@ -20,7 +20,7 @@
                 templateUrl: 'src/trains/train-search.template.html',
                 controller: 'TrainController as trainCtrl'
             })
-            .state('get-trains', {
+            .state('train-search.get-trains', {
                 url: '/get-trains',
                 templateUrl: 'src/trains/train-show.template.html',
                 controller: 'GetTrainController as getTrainCtrl'

@@ -4,8 +4,8 @@
     angular.module('GrabYourTicketApp')
         .controller('TrainController', TrainController);
 
-    TrainController.$inject = ['TrainService', '$rootScope', '$location'];
-    function TrainController(TrainService, $rootScope, $location) {
+    TrainController.$inject = ['TrainService', '$rootScope', '$state'];
+    function TrainController(TrainService, $rootScope, $state) {
         var trainCtrl = this;
         trainCtrl.sourceName = '';
         trainCtrl.destinationName = '';
@@ -19,7 +19,7 @@
             var response = TrainService.searchTrain(searchTrain, sourceTrainCode, destinationTrainCode, trainCtrl.date);
             response.then(data => {
                 trainCtrl.matchedTrains = data.trainData;
-                $location.path('get-trains');
+                $state.go('train-search.get-trains');
             })
                 .catch(error => {
                     console.log(error);

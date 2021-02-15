@@ -109,6 +109,10 @@ body {
   margin-top: 60px;
 }
 
+#bus-qna :hover {
+  transform: none !important;
+}
+
 .bus-faq-heading {
   text-align: center;
   font-size: 2.1em;
