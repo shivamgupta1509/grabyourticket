@@ -18,10 +18,10 @@
                 response.then(data => {
                     console.log("Data: ", data);
                     if (data.error) {
-                        alert(data.error.message);
+                        swal(data.error.message, "Click the below button :)", "error");
                         $location.path("signup");
                     } else if (data.register) {
-                        alert("Registered Successfully");
+                        swal("Registered Successfully!", "Click the Below Button!", "success");
                         $location.path("login");
                     }
                 })

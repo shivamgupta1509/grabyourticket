@@ -13,7 +13,8 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/5130183192.js" crossorigin="anonymous"></script>
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="./css/styles.css"/>
+  <link rel="stylesheet" href="src/sweetalert/bower_components/sweetalert/dist/sweetalert.css">
+  <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/styles1.css">
 
   <!-- Javascript Link -->
@@ -21,6 +22,11 @@
   <!-- Lib Module -->
   <script src="lib/angular.min.js"></script>
   <script src="lib/angular-ui-router.min.js"></script>
+
+  <!-- SweetAlert -->
+  <script src="src/sweetalert/bower_components/ngSweetAlert/SweetAlert.min.js"></script>
+  <script src="src/sweetalert/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="src/sweetalert/sweetalert.module.js"></script>
 
   <!-- Module -->
   <script src="src/grabyourticket.module.js"></script>
@@ -68,11 +74,15 @@
         style="text-decoration:none; color:white;">
         <h4><i class="fa fa-hotel"></i> Hotels</h4>
       </a></span>
-    <span class="nav-menu"><a ui-sref="login" ng-if="!mainCtrl.showUsername" ui-sref-active="active-tab"
+    <span class="nav-menu"><a ui-sref="login" ng-if="!user" ui-sref-active="active-tab"
         style="text-decoration:none; color:white;">
         <h4><i class="fa fa-sign-in"></i> Login</h4>
       </a></span>
-    <span ng-if="mainCtrl.showUsername">{{mainCtrl.username}}</span>
+    <span class="nav-menu" ng-if="user" style="text-decoration:none; color:white;">Welcome {{user}}</span>
+    <span class="nav-menu" ng-if="user"><a ng-click="mainCtrl.logout();"
+        style="text-decoration:none; color:white; cursor: pointer;">
+        <h4><i class="fas fa-sign-out-alt"></i> Logout</h4>
+      </a></span>
   </nav>
 
   <ui-view></ui-view>
@@ -84,14 +94,14 @@
           <h5><span class="fa fa-map-marker fa-1x" aria-hidden="true"></span> Thakur College of Engineering and
             Technology, Kandivali (E), Mumbai, Maharashtra, India</h5><br>
           <h5><span class="fa fa-phone fa-1x" aria-hidden="true"></span> +91-9000400999</h5><br>
-          <h5><span class="fa fa-envelope fa-1x" aria-hidden="true"></span> grabyourticket@gmail.com</h5>
+          <h5><span class="fa fa-envelope fa-1x" aria-hidden="true"></span> grabyourticket1@gmail.com</h5>
         </div>
         <div class="col-3 offset-sm-4 mt-5">
           <h5>Follow Us:</h5>
           <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
             <i class="fa fa-facebook fa-lg"></i>
           </a>
-          <a class="footer-anchor" href="mailto:bingesort7@gmail.com" style="text-decoration:none; color:white;">
+          <a class="footer-anchor" href="mailto:grabyourticket1@gmail.com" style="text-decoration:none; color:white;">
             <i class="fa fa-envelope-o fa-lg"></i>
           </a>
           <a class="footer-anchor" href="#" style="text-decoration:none; color:white;">
