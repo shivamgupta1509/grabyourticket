@@ -417,3 +417,25 @@ ___________________________________Train Search Result Page_____________________
   width: 100px;
   margin-left: 20px;
 }
+
+.list-input_train {
+  width: 50px;
+}
+/* ****************************************************************************************************
+___________________________________Flight Search Result Page____________________________________________
+**************************************************************************************************** */
+.flight_search_main_div {
+  background-image: url("../images/flight_search_result.jpg");
+  background-repeat: no-repeat;
+  background-position: 0px -150px;
+}
+.flight_search_div_1 {
+  background-position: 0px 200px;
+  color: white;
+}
+.flight_search_div_2 {
+  transform: translate(0px, 80px);
+}
+.list-input_flight {
+  width: 100px;
+}
