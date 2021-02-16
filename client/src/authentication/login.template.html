@@ -4,7 +4,7 @@
             <div class="card shadow-lg mt-5 login-card">
                 <div class="card-body">
                     <h3>USER AUTHENTICATION</h3>
-                    <form action="#" method="POST">
+                    <form ng-submit="loginCtrl.login()" method="POST">
                         <div class="mb-3">
                             <label class="form-label">Email address:</label>
                             <input ng-model="loginCtrl.username" type="email" class="form-control" name="email"
@@ -17,8 +17,7 @@
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <button type="button" ng-click="loginCtrl.login()" name="Submit"
-                                    class="btn btn-success"><b>Login</b></button>
+                                <button type="submit" name="Submit" class="btn btn-success"><b>Login</b></button>
                             </div>
                             <div class="col-6">
                                 <h6>Need an account? <a ui-sref="signup">SignUp</a></h6>

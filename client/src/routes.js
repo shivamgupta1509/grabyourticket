@@ -17,7 +17,8 @@
             })
             .state('train-search', {
                 url: '/train-search',
-                templateUrl: 'src/trains/train-search.template.html'
+                templateUrl: 'src/trains/train-search.template.html',
+                controller: 'TrainController as trainCtrl'
             })
             .state('bus-search', {
                 url: '/bus-search',

@@ -6,6 +6,8 @@ const User = require("./models/users")
 const LocalStrategy = require("passport-local")
 const cors = require("cors");
 const passport = require("passport");
+const session = require("express-session");
+var unirest = require("unirest");
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
@@ -21,7 +23,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 mongoose.set("useCreateIndex", true);
 mongoose.set('useFindAndModify', false);
 
-app.use(require("express-session")({
+app.use(session({
     secret: "Option",
     resave: false,
     saveUninitialized: false,
@@ -38,8 +40,34 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get("/", (req, res) => {
-    res.send("this is get route of /")
+
+app.post("/search-train", (req, res) => {
+    var d = new Date(req.body.date)
+    console.log(d.getDate());
+    // This is for train api
+    var request = unirest("POST", "https://trains.p.rapidapi.com/");
+
+    request.headers({
+        "content-type": "application/json",
+        "x-rapidapi-key": process.env.RAPID_API_KEY,
+        "x-rapidapi-host": "trains.p.rapidapi.com",
+        "useQueryString": true
+    });
+
+    request.type("json");
+    request.send({
+        "search": req.body.searchTrain
+    });
+
+    request.end(function (response) {
+        if (response.error) throw new Error(response.error);
+
+        console.log(response.body);
+        var searchTrains = response.body;
+        var matchedTrains = searchTrains.filter((element) => element.train_from == req.body.sourceTrainCode && element.train_to == req.body.destinationTrainCode)
+        return res.send({ trainData: matchedTrains });
+    });
+    // Train api ended here
 });
 
 app.post("/register", (req, res) => {
@@ -73,8 +101,8 @@ app.post("/login", (req, res) => {
             return res.json({ error: err });
         } else {
             passport.authenticate("local")(req, res, () => {
-                console.log("Req User: ", req.user);
-                res.send({ login: true });
+                req.session.user = req.user;
+                res.send({ login: true, user: req.session.user.username });
             })
         }
     })
@@ -82,7 +110,7 @@ app.post("/login", (req, res) => {
 
 app.get("/logout", function (req, res) {
     req.logout();
-    res.redirect("/");
+    res.json({ logout: true });
 });
 
 app.listen(PORT, () => {
