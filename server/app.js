@@ -6,8 +6,13 @@ const User = require("./models/users")
 const LocalStrategy = require("passport-local")
 const cors = require("cors");
 const passport = require("passport");
+<<<<<<< HEAD
+var unirest = require("unirest");
+const session = require("express-session");
+=======
 const session = require("express-session");
 var unirest = require("unirest");
+>>>>>>> dbe2fcdce0e5f25f785ac205a99c8e6112080e15
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
@@ -69,6 +74,41 @@ app.post("/search-train", (req, res) => {
     });
     // Train api ended here
 });
+
+
+app.post("/search_flight", (req, res)=>{
+
+    var req = unirest("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO-sky/ORD-sky/2021-03-01/");
+
+    req.query({
+        "inboundpartialdate": "2021-03-01"
+    });
+
+    req.headers({
+        "x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
+        "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+        "useQueryString": true
+    });
+
+    // req.type("json");
+
+    // req.send({
+    //     "country" : "US",
+    //     "currency" : "USD",
+    //     "locale" : "en-US",
+    //     "originplace" : "SFO-sky",
+    //     "destinationplace" : "ORD-sky",
+    //     "outboundpartialdate" : "2021-03-01"
+    // });
+
+
+    req.end(function (res) {
+        if (res.error) throw new Error(res.error);
+
+        console.log(res.body);
+    });
+});
+
 
 app.post("/register", (req, res) => {
     var fullname = req.body.name;
