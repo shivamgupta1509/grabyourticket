@@ -20,6 +20,11 @@
                 templateUrl: 'src/trains/train-search.template.html',
                 controller: 'TrainController as trainCtrl'
             })
+            .state('train-search.get-trains', {
+                url: '/get-trains',
+                templateUrl: 'src/trains/search-result.template.html',
+                controller: 'GetTrainController as getTrainCtrl'
+            })
             .state('bus-search', {
                 url: '/bus-search',
                 templateUrl: 'src/bus/bus-search.template.html'
