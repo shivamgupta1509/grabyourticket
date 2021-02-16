@@ -402,17 +402,18 @@ ___________________________________Login Page / SignUp Page_____________________
 /* ****************************************************************************************************
 ___________________________________Train Search Result Page____________________________________________
 **************************************************************************************************** */
-.train_search_div_1{
+.train_search_div_1 {
   height: 450px;
-  color:aqua;
+  color: aqua;
   background-image: url("../images/train_search_result.png");
   background-repeat: no-repeat;
   background-position: 460px 100px;
   background-color: #1f547a;
 }
-.train_search_div_2{
+.train_search_div_2 {
   background-color: rgb(253, 250, 245);
 }
-.list-input{
-  width:50px;
+.list-input {
+  width: 100px;
+  margin-left: 20px;
 }

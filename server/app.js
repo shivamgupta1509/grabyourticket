@@ -61,7 +61,7 @@ app.post("/search-train", (req, res) => {
 
     request.end(function (response) {
         if (response.error) throw new Error(response.error);
-
+        console.log(req.body);
         console.log(response.body);
         var searchTrains = response.body;
         var matchedTrains = searchTrains.filter((element) => element.train_from == req.body.sourceTrainCode && element.train_to == req.body.destinationTrainCode)

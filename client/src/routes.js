@@ -22,7 +22,7 @@
             })
             .state('train-search.get-trains', {
                 url: '/get-trains',
-                templateUrl: 'src/trains/train-show.template.html',
+                templateUrl: 'src/trains/search-result.template.html',
                 controller: 'GetTrainController as getTrainCtrl'
             })
             .state('bus-search', {

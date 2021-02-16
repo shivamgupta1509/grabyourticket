@@ -1,72 +1,74 @@
 <div class="train_search_div_1">
-    <div class="row">
-      <div class="col-2">
-        <br>
-        <img src="./images/train_search_offer.png" alt="">
-      </div>
-      <div class="col-4 offset-sm-3">
-        <br>
-        <center>
-          <h2>------FLAT------</h2>
-          <h1>GET UPTO</h1>
-          <img src="http://www.pngmart.com/files/7/Cashback-Transparent-PNG.png" alt="" height="200px">
-        </center>
-      </div>
+  <div class="row">
+    <div class="col-2">
+      <br>
+      <img src="./images/train_search_offer.png" alt="">
     </div>
+    <div class="col-4 offset-sm-3">
+      <br>
+      <center>
+        <h2>------FLAT------</h2>
+        <h1>GET UPTO</h1>
+        <img src="http://www.pngmart.com/files/7/Cashback-Transparent-PNG.png" alt="" height="200px">
+      </center>
+    </div>
+  </div>
 </div>
-<div class="train_search_div_2">
-    <div class="row mt-2">
-      <div class="col-sm-5 offset-sm-1">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <h5><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6WSYKi62QpG8_5DrC-tnV60FH82HY5FNgg&usqp=CAU" alt="" height="30px"> Mumbai Bandra (T.) - Jabalpur SpecialFare SF Special</h5>
-            <div class = "row">
-              <div class="col-3">
-                Train no: <b>1705</b>
+<div class="train_search_div_2 container">
+  <div class="row mt-2">
+    <div ng-repeat="item in getTrainCtrl.result.trainData" class="col-sm-6">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h5><img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6WSYKi62QpG8_5DrC-tnV60FH82HY5FNgg&usqp=CAU"
+              alt="" height="30px"> {{item.name}}</h5>
+          <div class="row">
+            <div class="col-3">
+              Train no: <b>{{item.train_num}}</b>
+            </div>
+            <div class="col-2 offset-3">
+              <div class="row">
+                <h6>{{item.data.arriveTime}}</h6>
               </div>
-              <div class="col-2 offset-3">
-                <div class="row">
-                  <h6>18:55 +1 night</h6>
-                </div>
-                <div class="row">
-                  <p>BDTS</p>
-                </div>
-              </div>
-              <div class="col-1">
-                <span class="fa fa-long-arrow-alt-right fa-2x"></span>
-              </div>
-              <div class="col-1">
-                <div class="row">
-                  <h6>20:30</h6>
-                </div>
-                <div class="row">
-                  <p>JBP</p>
-                </div>
+              <div class="row">
+                <p>{{item.train_from}}</p>
               </div>
             </div>
-            <hr>
-            <form action="#" method="post">
+            <div class="col-1">
+              <span class="fa fa-long-arrow-alt-right fa-2x"></span>
+            </div>
+            <div class="col-1">
               <div class="row">
-                <div class="col-1 mx-2">
-                  <label for="classes"><b>classes:</b></label>
-                </div>
-                <div class="col-4">
-                  <input list="classes" name="class" id="class" class="list-input">
-                  <datalist id="classes">
-                    <option value="II">
-                    <option value="SL">
-                    <option value="3A">
-                    <option value="2A">
-                  </datalist>
-                </div>
-                <div class="col-4 offset-2">
-                  <button type="button" class="btn btn-success btn-lg"><b>Book Now</b></button>
-                </div>
+                <h6>{{item.data.departTime}}</h6>
               </div>
-            </form>
+              <div class="row">
+                <p>{{item.train_to}}</p>
+              </div>
             </div>
           </div>
+          <hr>
+          <form action="#" method="post">
+            <div class="row">
+              <div class="col-1 mx-2">
+                <label for="classes"><b>classes:</b></label>
+              </div>
+              <div class="col-4">
+                <input list="classes" name="class" id="class" class="list-input" placeholder="class">
+                <datalist id="classes">
+                  <option value="II">
+                  <option value="SL">
+                  <option value="3A">
+                  <option value="2A">
+                </datalist>
+              </div>
+              <div class="col-4 offset-2">
+                <button type="button" class="btn btn-success btn-lg"><b>Book Now</b></button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
+</div>
 </div>
