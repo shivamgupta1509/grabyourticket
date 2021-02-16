@@ -6,8 +6,13 @@ const User = require("./models/users")
 const LocalStrategy = require("passport-local")
 const cors = require("cors");
 const passport = require("passport");
+<<<<<<< HEAD
 var unirest = require("unirest");
 const session = require("express-session");
+=======
+const session = require("express-session");
+var unirest = require("unirest");
+>>>>>>> dbe2fcdce0e5f25f785ac205a99c8e6112080e15
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
@@ -41,35 +46,33 @@ app.use(function (req, res, next) {
 });
 
 
-app.get("/", (req, res) => {
-    res.send("this is get route of /")
-});
+app.post("/search-train", (req, res) => {
+    var d = new Date(req.body.date)
+    console.log(d.getDate());
+    // This is for train api
+    var request = unirest("POST", "https://trains.p.rapidapi.com/");
 
-app.post("/search_train", (req, res) =>{
-    var train_search = req.body.train_search;
+    request.headers({
+        "content-type": "application/json",
+        "x-rapidapi-key": process.env.RAPID_API_KEY,
+        "x-rapidapi-host": "trains.p.rapidapi.com",
+        "useQueryString": true
+    });
 
-    if(train_search != ""){
-        var req = unirest("POST", "https://trains.p.rapidapi.com/");
+    request.type("json");
+    request.send({
+        "search": req.body.searchTrain
+    });
 
-        req.headers({
-            "content-type": "application/json",
-            "x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
-            "x-rapidapi-host": "trains.p.rapidapi.com",
-            "useQueryString": true
-        });
+    request.end(function (response) {
+        if (response.error) throw new Error(response.error);
 
-        req.type("json");
-
-        req.send({
-            "search": train_search
-        });
-
-        req.end(function (res) {
-            if (res.error) throw new Error(res.error);
-            var output = res.body;
-            console.log(output[0]);
-        });
-    }
+        console.log(response.body);
+        var searchTrains = response.body;
+        var matchedTrains = searchTrains.filter((element) => element.train_from == req.body.sourceTrainCode && element.train_to == req.body.destinationTrainCode)
+        return res.send({ trainData: matchedTrains });
+    });
+    // Train api ended here
 });
 
 
