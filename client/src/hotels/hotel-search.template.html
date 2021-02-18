@@ -1,0 +1,192 @@
+<header>
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 quote">
+                            <i class="fas fa-hotel fa-lg"></i> Book your Favourite Hotel at Lowest Price...
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-10 offset-1">
+                            <div class="d-flex" id="hotel_search_flex">
+                                <div class="col-12">
+                                    <form class="form-floating" class="" id="" method="">
+                                        <div class="row justify-content-center">
+                                            <div class="col-3 search_block">
+                                                <label class="form-label" for="location_search"><i
+                                                        class="fas fa-city"></i> Enter City name, Location :</label>
+                                                <input class="form-control" id="location_search" name="location_search"
+                                                    type="text">
+                                            </div>
+                                            <div class="col-3 search_block">
+                                                <label class="form-label" for="check_in"><i
+                                                        class="far fa-calendar-alt"></i> Check-in:</label>
+                                                <input class="form-control" id="check_in" name="check_in" type="date">
+                                            </div>
+                                            <div class="col-3 search_block">
+                                                <label class="form-label" for="check_out"><i
+                                                        class="far fa-calendar-alt"></i> Check-out:</label>
+                                                <input class="form-control" id="check_out" name="check_out" type="date">
+                                            </div>
+                                            <div class="col-3  align-self-center">
+                                                <button type="submit" class="btn btn-lg btn-primary" id="search_hotel"
+                                                    name="search_hotel"><i class="fas fa-search-location"></i>
+                                                    Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="msg_quote">
+                Book Hotels at Popular Destination...
+            </div>
+            <div class="col-10 offset-1">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card" id="hotel_card">
+                            <img src="./images/taj_hotel.jpeg" id="hotel_img" alt="taj_hotel">
+                            <div class="card-body">
+                                <div id="hotel_name">
+                                    The Taj Hotel
+                                </div>
+                                <div>
+                                    <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></span>
+                                </div>
+                                <address id="hotel_add">
+                                    Mumbai <br>
+                                    Maharastra, India
+                                </address>
+                                <button class="btn btn-success btn-lg" id="detail_btn">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="hotel_card">
+                            <img src="./images/oberio_hotel.jpg" id="hotel_img" alt="oberio_hotel">
+                            <div class="card-body">
+                                <div id="hotel_name">
+                                    The Oberoi Udaivilas
+                                </div>
+                                <div>
+                                    <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></span>
+                                </div>
+                                <address id="hotel_add">
+                                    Udiapur <br>
+                                    Rajasthan, India
+                                </address>
+                                <button class="btn btn-success btn-lg" id="detail_btn">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="hotel_card">
+                            <img src="./images/golden_Tulip.jpg" id="hotel_img" alt="golden_Tulip">
+                            <div class="card-body">
+                                <div id="hotel_name">
+                                    The Golden Tulip
+                                </div>
+                                <div>
+                                    <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></span>
+                                </div>
+                                <address id="hotel_add">
+                                    Goa <br>
+                                    Goa, India
+                                </address>
+                                <button class="btn btn-success btn-lg" id="detail_btn">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="hotel_card">
+                            <img src="./images/westcoast-alibaug.jpg" id="hotel_img" alt="westcoast-alibaug">
+                            <div class="card-body">
+                                <div id="hotel_name">
+                                    Hotel West Coast
+                                </div>
+                                <div>
+                                    <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></span>
+                                </div>
+                                <address id="hotel_add">
+                                    Alibaug <br>
+                                    Maharastra, India
+                                </address>
+                                <button class="btn btn-success btn-lg" id="detail_btn">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-4">
+            <div class="col-12 mt-3" id="msg_quote">
+                Why Book Hotels with GrabYourTicket?
+            </div>
+            <div class="col-10 offset-1 mt-4">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card text-center" id="offers">
+                            <div class="card-body">
+                                <span id="offer_name">Extensive Hotel Options</span><br>
+                                <img id="offer_img" src="./images/hotel_offer.webp" alt="hotel_offer"><br>
+                                <span id="offer_msg">Best hotels available for different destinations to offer you a
+                                    stay of lifetime.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card text-center" id="offers">
+                            <div class="card-body">
+                                <span id="offer_name">Savings on Hotel Booking</span><br>
+                                <img id="offer_img" src="./images/save_money.png" alt="save_money"><br>
+                                <span id="offer_msg">Enjoy hotel bookings with best offers and discount and make your
+                                    stay unforgettable.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card text-center" id="offers">
+                            <div class="card-body">
+                                <span id="offer_name">Hotel Rating</span><br>
+                                <img id="offer_img" src="./images/rating_img.jpg" alt="rating_img"><br>
+                                <span id="offer_msg">All our hotels have good ratings on Trip Advisor and recommended by
+                                    users.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card text-center" id="offers">
+                            <div class="card-body">
+                                <span id="offer_name">Great Deals on Travel</span><br>
+                                <img id="offer_img" src="./images/deal_img.png" alt="great_deal"><br>
+                                <span id="offer_msg">Also grab attractive offers on holiday packages, flights and other
+                                    travel products</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</section>

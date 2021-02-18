@@ -1,0 +1,250 @@
+<div class="container-fluid" id="bus-form">
+    <div class="bus-form-container">
+        <h4 class="online-bus-heading"><i class="fa fa-train" aria-hidden="true"></i>Online Train Ticket</h4>
+        <div class="bus-search-form">
+            <i class="fas fa-exchange-alt"></i>
+            <form ng-submit="trainCtrl.searchTrain()" method="POST">
+                <input list="source-cities" name="source-city" ng-model="trainCtrl.sourceName" id="source-city"
+                    placeholder="Source City">
+                <datalist id="source-cities">
+                    <option value="NEW DELHI-NDLS"></option>
+                    <option value="HOWRAH-HWH"></option>
+                    <option value="SECUNDERABAD-SC"></option>
+                    <option value="PUNE-PUNE"></option>
+                    <option value="AHMEDABAD-ADI"></option>
+                    <option value="LOKMANYA-LTT"></option>
+                    <option value="NIZAMUDDIN-NZM"></option>
+                    <option value="CHATTRAPATI SHIVAJI MAHARAJ TERMINUS-CSMT"></option>
+                    <option value="JAIPUR-JP"></option>
+                    <option value="Anand VIHAN-ANVT"></option>
+                    <option value="BANDRA TERMINUS-BDTS"></option>
+                    <option value="VIJAYAWADA-BZA"></option>
+                    <option value="PATNA-PNBE"></option>
+                    <option value="MUMBAI CENTRAL-MMCT"></option>
+                    <option value="BHOPAL-BPL"></option>
+                    <option value="NAGPUR-NGP"></option>
+                    <option value="LUCKNOW-LKO"></option>
+                    <option value="VARANASI-BSB"></option>
+                    <option value="KANPUR-CNB"></option>
+                    <option value="GORAKHPUR-GKP"></option>
+                    <option value="JABALPUR-JBP"></option>
+                    <option value="THANE-TNA"></option>
+                    <option value="DADAR-DR"></option>
+                    <option value="RANCHI-RNC"></option>
+                    <option value="JHANSI-JHS"></option>
+                    <option value="GHAZIABAD-GZB"></option>
+                    <option value="AMRITSAR-ASR"></option>
+                    <option value="KOLKATA-KOAA"></option>
+                    <option value="MATHURA-MTJ"></option>
+                    <option value="HYDERABAD-HBJ"></option>
+                    <option value="SURAT-ST"></option>
+                </datalist>
+                <input list="destination-cities" name="destination-city" ng-model="trainCtrl.destinationName"
+                    id="destination-city" placeholder="Destination City">
+                <datalist id="destination-cities">
+                    <option value="NEW DELHI-NDLS"></option>
+                    <option value="HOWRAH-HWH"></option>
+                    <option value="SECUNDERABAD-SC"></option>
+                    <option value="PUNE-PUNE"></option>
+                    <option value="AHMEDABAD-ADI"></option>
+                    <option value="LOKMANYA-LTT"></option>
+                    <option value="NIZAMUDDIN-NZM"></option>
+                    <option value="CHATTRAPATI SHIVAJI MAHARAJ TERMINUS-CSMT"></option>
+                    <option value="JAIPUR-JP"></option>
+                    <option value="Anand VIHAN-ANVT"></option>
+                    <option value="BANDRA TERMINUS-BDTS"></option>
+                    <option value="VIJAYAWADA-BZA"></option>
+                    <option value="PATNA-PNBE"></option>
+                    <option value="MUMBAI CENTRAL-MMCT"></option>
+                    <option value="BHOPAL-BPL"></option>
+                    <option value="NAGPUR-NGP"></option>
+                    <option value="LUCKNOW-LKO"></option>
+                    <option value="VARANASI-BSB"></option>
+                    <option value="KANPUR-CNB"></option>
+                    <option value="GORAKHPUR-GKP"></option>
+                    <option value="JABALPUR-JBP"></option>
+                    <option value="THANE-TNA"></option>
+                    <option value="DADAR-DR"></option>
+                    <option value="RANCHI-RNC"></option>
+                    <option value="JHANSI-JHS"></option>
+                    <option value="GHAZIABAD-GZB"></option>
+                    <option value="AMRITSAR-ASR"></option>
+                    <option value="KOLKATA-KOAA"></option>
+                    <option value="MATHURA-MTJ"></option>
+                    <option value="HYDERABAD-HBJ"></option>
+                    <option value="SURAT-ST"></option>
+                </datalist>
+                <input type="date" name="date-of-travel" ng-model="trainCtrl.date" placeholder="dd-mm-yyyy">
+                <button type="submit" class="btn search-bus-button">
+                    <i class="fas fa-search"></i>
+                    Search Train
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<ui-view></ui-view>
+
+<div class="container-fluid" id="grab-your-ticket-bus">
+    <div class="grab-your-ticket-bus-heading">
+        <h4>Why GrabYourTicket for Train Booking ?</h4>
+    </div>
+    <div class="grab-your-ticket-bus-cards">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card first-card" style="width:400px; height: 350px !important;">
+                    <img class="card-img-top" width="398" height="200" src="./images/train.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">Extensive Options</h4>
+                        <p class="card-text">
+                            Book from the selection of seats, including AC, Non-AC, General and more.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card second-card" style="width:400px; height: 350px !important;">
+                    <img class="card-img-top" width="398" height="200" src="./images/cashback.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">Discounts or Cashbacks</h4>
+                        <p class="card-text">
+                            We also assure cash backs and reward points to the customers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card third-card" style="width:400px; height: 350px !important;">
+                    <img class="card-img-top" width="398" height="200" src="./images/card.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">Payment Options</h4>
+                        <p class="card-text">
+                            Pay through cards, Net banking or mobile wallets for Train reservation
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="bus-qna">
+    <div class="bus-faq-heading">
+        <h4>FAQ</h4>
+    </div>
+    <div class="all-qna">
+        <div class="accordion bus-accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button"
+                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                            aria-controls="collapseOne">
+                            <span>
+                                Why should I book Train tickets with GrabYourTicket.com?
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        GrabYourTicket is one of the best platforms to book train tickets that come up with latest
+                        technological updates keeping its users in mind. Wide options for train are available with
+                        great offers and discounts
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button"
+                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            <span>
+                                What are the payment methods for booking train tickets?
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        With GrabYourTicket Train booking, you have the ease of choosing different methods for
+                        payments.
+                        Payment options like Debit/Credit Card, Net Banking, Wallets, PhonePe and EMI with various
+                        banks are available for the convenience of the customers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button"
+                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                            aria-controls="collapseThree">
+                            <span>
+                                How to avail discount on Train booking with GrabYourTicket
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        There are several offers and discounts are available on our website. On this link only, you
+                        can find out the ongoing deals on Train tickets .
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button"
+                            data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                            aria-controls="collapseFour">
+                            <span>
+                                What to do if I lose my ticket?
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                        The online booking facility allows you having a copy of your Train ticket in your inbox. You
+                        can obtain this again from your email I’d.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button"
+                            data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                            aria-controls="collapseFive">
+                            <span>
+                                How can I cancel my Train ticket at GrabYourTicket
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                    <div class="card-body">
+                        You can cancel your ticket by going to my account segment and then clicking on Train option.
+                        The amount of refund will be credited to the original payment method.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="logindiv">
+    <div class="row">
+        <div class="col-4 offset-sm-4">
+            <div class="card shadow-lg mt-5 login-card">
+                <div class="card-body">
+                    <h3>USER AUTHENTICATION</h3>
+                    <form ng-submit="loginCtrl.login()" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">Email address:</label>
+                            <input ng-model="loginCtrl.username" type="email" class="form-control" name="email"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password:</label>
+                            <input type="password" ng-model="loginCtrl.password" class="form-control" name="password"
+                                required>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" name="Submit" class="btn btn-success"><b>Login</b></button>
+                            </div>
+                            <div class="col-6">
+                                <h6>Need an account? <a ui-sref="signup">SignUp</a></h6>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
