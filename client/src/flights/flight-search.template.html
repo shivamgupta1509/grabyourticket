@@ -3,32 +3,51 @@
         <h4 class="online-bus-heading"><i class="fa fa-plane" aria-hidden="true"></i>Online Flight Ticket</h4>
         <div class="flight-search-form">
             <i class="fas fa-exchange-alt"></i>
-            <form action="" method="">
-                <input list="source-cities" name="source-city" id="source-city" placeholder="Source City">
+            <form ng-submit="flightCtrl.searchFlight();" method="POST">
+                <input list="source-cities" ng-model="flightCtrl.source" name="source-city" id="source-city"
+                    placeholder="Source City">
                 <datalist id="source-cities">
-                    <option value="Banglore"></option>
-                    <option value="Chennai"></option>
-                    <option value="Delhi"></option>
-                    <option value="Goa"></option>
-                    <option value="Hyderabad"></option>
-                    <option value="Kolkata"></option>
-                    <option value="Mumbai"></option>
-                    <option value="Pune"></option>
+                    <option value="Mumbai-BOM"></option>
+                    <option value="Pune-PNQ"></option>
+                    <option value="Nanded-NDC"></option>
+                    <option value="Nagpur-NAG"></option>
+                    <option value="New Delhi-DEL"></option>
+                    <option value="Ahmedabad-AMD"></option>
+                    <option value="Surat-STV"></option>
+                    <option value="Bhuj-BHJ"></option>
+                    <option value="Varanasi-VNS"></option>
+                    <option value="Lucknow-LKO"></option>
+                    <option value="Agra-AGR"></option>
+                    <option value="Gorakhpur-GOP"></option>
+                    <option value="Kanpur-KNU"></option>
+                    <option value="Hyderabad-HYD"></option>
+                    <option value="Bhopal-BHO"></option>
+                    <option value="Gwalior-GWL"></option>
+                    <option value="Jaipur-JAI"></option>
                 </datalist>
-                <input list="destination-cities" name="destination-city" id="destination-city"
-                    placeholder="Destination City">
+                <input list="destination-cities" ng-model="flightCtrl.destination" name="destination-city"
+                    id="destination-city" placeholder="Destination City">
                 <datalist id="destination-cities">
-                    <option value="Banglore"></option>
-                    <option value="Chennai"></option>
-                    <option value="Delhi"></option>
-                    <option value="Goa"></option>
-                    <option value="Hyderabad"></option>
-                    <option value="Kolkata"></option>
-                    <option value="Mumbai"></option>
-                    <option value="Pune"></option>
+                    <option value="Mumbai-BOM"></option>
+                    <option value="Pune-PNQ"></option>
+                    <option value="Nanded-NDC"></option>
+                    <option value="Nagpur-NAG"></option>
+                    <option value="New Delhi-DEL"></option>
+                    <option value="Ahmedabad-AMD"></option>
+                    <option value="Surat-STV"></option>
+                    <option value="Bhuj-BHJ"></option>
+                    <option value="Varanasi-VNS"></option>
+                    <option value="Lucknow-LKO"></option>
+                    <option value="Agra-AGR"></option>
+                    <option value="Gorakhpur-GOP"></option>
+                    <option value="Kanpur-KNU"></option>
+                    <option value="Hyderabad-HYD"></option>
+                    <option value="Bhopal-BHO"></option>
+                    <option value="Gwalior-GWL"></option>
+                    <option value="Jaipur-JAI"></option>
                 </datalist>
 
-                <input type="date" name="date-of-travel" placeholder="dd-mm-yyyy">
+                <input type="date" id="date-of-travel" name="date-of-travel" placeholder="dd-mm-yyyy">
 
                 <input list="Class" name="Class" id="destination-city" placeholder="Class">
                 <datalist id="Class">
@@ -37,7 +56,7 @@
                     <option value="Business"></option>
                 </datalist>
 
-                <button type="button" class="btn search-bus-button">
+                <button type="submit" class="btn search-bus-button">
                     <i class="fas fa-search"></i>
                     Search Flight
                 </button>

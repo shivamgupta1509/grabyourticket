@@ -13,7 +13,8 @@
             })
             .state('flight-search', {
                 url: '/flight-search',
-                templateUrl: 'src/flights/flight-search.template.html'
+                templateUrl: 'src/flights/flight-search.template.html',
+                controller: 'FlightController as flightCtrl'
             })
             .state('train-search', {
                 url: '/train-search',
@@ -25,13 +26,18 @@
                 templateUrl: 'src/trains/search-result.template.html',
                 controller: 'GetTrainController as getTrainCtrl'
             })
+            .state('train-book-form', {
+                url: '/train-book-form',
+                templateUrl: 'src/trains/booking-form.template.html'
+            })
             .state('bus-search', {
                 url: '/bus-search',
                 templateUrl: 'src/bus/bus-search.template.html'
             })
             .state('hotel-search', {
                 url: '/hotel-search',
-                templateUrl: 'src/hotels/hotel-search.template.html'
+                templateUrl: 'src/hotels/hotel-search.template.html',
+                controller: 'HotelController as hotelCtrl'
             })
             .state('login', {
                 url: '/login',

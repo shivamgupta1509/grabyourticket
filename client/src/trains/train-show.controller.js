@@ -4,10 +4,12 @@
     angular.module('GrabYourTicketApp')
         .controller("GetTrainController", GetTrainController);
 
-    GetTrainController.$inject = ['TrainService', '$rootScope'];
-    function GetTrainController(TrainService, $rootScope) {
+    GetTrainController.$inject = ['TrainService', '$rootScope', '$state'];
+    function GetTrainController(TrainService, $rootScope, $state) {
         var getTrainCtrl = this;
         getTrainCtrl.result = TrainService.getMatchedTrains()
-        console.log('TrainService.getMatchedTrains(): ', TrainService.getMatchedTrains());
+        getTrainCtrl.bookNow = function () {
+            $state.go('train-book-form')
+        }
     }
 })();
