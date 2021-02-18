@@ -8,7 +8,11 @@ const cors = require("cors");
 const passport = require("passport");
 var unirest = require("unirest");
 const session = require("express-session");
+<<<<<<< HEAD
 var unirest = require("unirest");
+=======
+
+>>>>>>> 7d9c6294ffcaf8397c9d35fe9ba361efe1559fd1
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -61,7 +65,7 @@ app.post("/search-train", (req, res) => {
 
     request.end(function (response) {
         if (response.error) throw new Error(response.error);
-
+        console.log(req.body);
         console.log(response.body);
         var searchTrains = response.body;
         var matchedTrains = searchTrains.filter((element) => element.train_from == req.body.sourceTrainCode && element.train_to == req.body.destinationTrainCode)
@@ -71,7 +75,7 @@ app.post("/search-train", (req, res) => {
 });
 
 
-app.post("/search_flight", (req, res)=>{
+app.post("/search_flight", (req, res) => {
 
     var req = unirest("POST", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO-sky/ORD-sky/2021-03-01/");
 
