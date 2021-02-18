@@ -8,7 +8,11 @@ const cors = require("cors");
 const passport = require("passport");
 var unirest = require("unirest");
 const session = require("express-session");
+<<<<<<< HEAD
+var unirest = require("unirest");
+=======
 
+>>>>>>> 7d9c6294ffcaf8397c9d35fe9ba361efe1559fd1
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -73,7 +77,7 @@ app.post("/search-train", (req, res) => {
 
 app.post("/search_flight", (req, res) => {
 
-    var req = unirest("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO-sky/ORD-sky/2021-03-01/");
+    var req = unirest("POST", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO-sky/ORD-sky/2021-03-01/");
 
     req.query({
         "inboundpartialdate": "2021-03-01"
@@ -85,22 +89,30 @@ app.post("/search_flight", (req, res) => {
         "useQueryString": true
     });
 
-    // req.type("json");
-
-    // req.send({
-    //     "country" : "US",
-    //     "currency" : "USD",
-    //     "locale" : "en-US",
-    //     "originplace" : "SFO-sky",
-    //     "destinationplace" : "ORD-sky",
-    //     "outboundpartialdate" : "2021-03-01"
-    // });
-
-
     req.end(function (res) {
         if (res.error) throw new Error(res.error);
 
         console.log(res.body);
+    });
+});
+
+app.post("/search_hotel", (req, res)=>{
+    var req = unirest("GET", "https://leejaew-hotels-in-singapore-v1.p.rapidapi.com/hotels");
+
+    req.query({
+        "country": "Singapore"
+    });
+
+    req.headers({
+        "x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
+        "x-rapidapi-host": "leejaew-hotels-in-singapore-v1.p.rapidapi.com",
+        "useQueryString": true
+    });
+
+    req.end(function (res) {
+        if (res.error) throw new Error(res.error);
+        op = res.body
+        console.log(op[0]);
     });
 });
 
