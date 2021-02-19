@@ -4,8 +4,8 @@
     angular.module('GrabYourTicketApp')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['AuthenticationService', '$rootScope'];
-    function MainController(AuthenticationService, $rootScope) {
+    MainController.$inject = ['AuthenticationService', '$rootScope', '$location'];
+    function MainController(AuthenticationService, $rootScope, $location) {
         var mainCtrl = this;
 
         mainCtrl.logout = function () {
@@ -15,6 +15,7 @@
                     delete sessionStorage.user;
                     $rootScope.user = undefined;
                     swal("LoggedOut Successfully!", "Click the Below Button!", "success");
+                    $location.path('home');
                 }
             })
         }

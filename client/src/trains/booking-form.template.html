@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Booking Form</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script>
+    function validateForm() {
+      var x = document.forms["myForm"]["from"].value;
+      if (x == "") {
+        alert("Please fill From row");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["to"].value;
+      if (x == "") {
+        alert("Please fill To row");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Departure Date"].value;
+      if (x == "") {
+        alert("Please fill Departure Date");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Departure Time"].value;
+      if (x == "") {
+        alert("Please fill Departure Time");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Train Name or Number"].value;
+      if (x == "") {
+        alert("Please fill Train Name or Number");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Adult"].value;
+      if (x == "") {
+        alert("Please Fill Adult row");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Children"].value;
+      if (x == "") {
+        alert("Please Fill Children row");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Infant"].value;
+      if (x == "") {
+        alert("Please Fill Infant row");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Return Date"].value;
+      if (x == "") {
+        alert("Please Fill Return Date");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Return time"].value;
+      if (x == "") {
+        alert("Please Fill Return time");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Full Name"].value;
+      if (x == "") {
+        alert("Please Fill Full Name");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Phone Number"].value;
+      if (x == "") {
+        alert("Please Fill Phone Number");
+        return false;
+      }
+
+      var x = document.forms["myForm"]["Email"].value;
+      if (x == "") {
+        alert("Please Fill Email");
+        return false;
+      }
+
+
+
+    }
+  </script>
+
+  <style>
+    ::placeholder {
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <!--container-->
+
+    <form name="myForm" class="form-group" onsubmit="return validateForm()" method="post">
+      <!--form-->
+      <h1 class="text-center">Train Booking Form</h1>
+
+      <div id="form">
+        <!--form-->
+        <h3 class="text-white">Booking Details</h3>
+
+        <div id="input">
+          <!--input-->
+          <input type="text" id="input-group" placeholder="From" name="from">
+          <input type="text" id="input-group" placeholder="To" name="to">
+          <input type="text" id="input-group" placeholder="Departure Date" name="Departure Date">
+          <input type="text" id="input-group" placeholder="Departure Time" name="Departure Time">
+          <input type="text" id="input-group" placeholder="Train Name or Number" name="Train Name or Number">
+
+          <select id="input-group" style="background: black;" name="Select Class">
+            <option value="">Preferred Seating</option>
+            <option value="">General Class</option>
+            <option value="">Sleeper Class</option>
+            <option value="">AC-3tier Class</option>
+            <option value="">AC-2tier Class</option>
+            <option value="">AC-1tier Class</option>
+          </select>
+        </div>
+        <!--input-->
+
+        <div id="input2">
+          <!--input2-->
+          <input type="number" id="input-group" placeholder="Adult" name="Adult">
+          <input type="number" id="input-group" placeholder="Children(2-11years)" name="Children">
+          <input type="number" id="input-group" placeholder="Infant(under 2years)" name="Infant">
+        </div>
+        <!--input2-->
+
+        <div id="input3">
+          <!--input3-->
+          <span id="input-group" class="text-primary">Select Your Fare</span>
+          <input type="radio" id="input-group" name="r">
+          <label class="text-white" for="input-group">Single</label>
+          <input type="radio" id="input-group" name="r">
+          <label class="text-white" for="input-group">Returning</label>
+        </div>
+        <!--input3-->
+
+        <div id="input4">
+          <!--input4-->
+          <input type="text" id="input-group" placeholder="Return Date" name="Return Date">
+          <input type="text" id="input-group" placeholder="Return time" name="Return time">
+          <input type="text" id="input-group1" placeholder="Any Message">
+        </div>
+        <!--input4-->
+
+        <div id="input5">
+          <!--input5-->
+          <h3 class="text-white">Personal Details</h3>
+        </div>
+        <!--input5-->
+
+        <div id="input6">
+          <!--input6-->
+          <input type="text" id="input-group" placeholder="Full Name" name="Full Name">
+          <input type="Text" id="input-group" placeholder="Phone Number" name="Phone Number">
+          <input type="email" id="input-group1" placeholder="Email" name="Email">
+        </div>
+        <!--input6-->
+        <button type="submit" class="btn btn-warning text-white">Submit Form</button>
+        <button type="reset" class="btn btn-primary">Clear Form</button>
+      </div>
+      <!--form-->
+
+    </form>
+    <!--form-->
+
+  </div>
+  <!--container-->
+</body>
+
+</html>
