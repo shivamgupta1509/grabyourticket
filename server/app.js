@@ -8,7 +8,10 @@ const cors = require("cors");
 const passport = require("passport");
 var unirest = require("unirest");
 const session = require("express-session");
+<<<<<<< HEAD
 var unirest = require("unirest");
+=======
+>>>>>>> b9213a9a67a523dfef27e6a7a7d5e643a88af6d7
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -71,44 +74,45 @@ app.post("/search-train", (req, res) => {
 });
 
 
-app.post("/search_flight", (req, res) => {
+app.post('/search_flight', (request, response) => {
+    var sourceCode = request.body.sourceCode;
+    var destinationCode = request.body.destinationCode;
+    var date = request.body.date;
 
-    var req = unirest("POST", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO-sky/ORD-sky/2021-03-01/");
-
-    req.query({
-        "inboundpartialdate": "2021-03-01"
-    });
+    var req = unirest("GET", `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/IN/INR/en-IN/${sourceCode}-sky/${destinationCode}-sky/${date}`);
 
     req.headers({
-        "x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
+        "x-rapidapi-key": process.env.RAPID_API_KEY,
         "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
         "useQueryString": true
     });
+
 
     req.end(function (res) {
         if (res.error) throw new Error(res.error);
 
         console.log(res.body);
+        response.send({ flightData: res.body });
     });
-});
+})
 
-app.post("/search_hotel", (req, res)=>{
-    var req = unirest("GET", "https://leejaew-hotels-in-singapore-v1.p.rapidapi.com/hotels");
-
-    req.query({
-        "country": "Singapore"
+app.post("/search_hotel", (req, res) => {
+    var request = unirest("GET", "https://leejaew-hotels-in-singapore-v1.p.rapidapi.com/hotels");
+    request.query({
+        "country": req.body.location
     });
 
-    req.headers({
-        "x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
+    request.headers({
+        "x-rapidapi-key": process.env.RAPID_API_KEY,
         "x-rapidapi-host": "leejaew-hotels-in-singapore-v1.p.rapidapi.com",
         "useQueryString": true
     });
 
-    req.end(function (res) {
-        if (res.error) throw new Error(res.error);
-        op = res.body
+    request.end(function (response) {
+        if (response.error) throw new Error(response.error);
+        op = response.body
         console.log(op[0]);
+        res.send({ hotel: op });
     });
 });
 
