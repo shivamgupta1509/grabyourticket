@@ -8,6 +8,7 @@ const cors = require("cors");
 const passport = require("passport");
 var unirest = require("unirest");
 const session = require("express-session");
+var unirest = require("unirest");
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

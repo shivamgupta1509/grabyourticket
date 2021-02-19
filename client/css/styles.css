@@ -445,3 +445,35 @@ ___________________________________Flight Search Result Page____________________
 .flight_search_div_2 {
   margin-bottom: 30px;
 }
+/* ****************************************************************************************************
+___________________________________Hotel Search Result Page____________________________________________
+**************************************************************************************************** */
+.hotel_search_main_div{
+  background-image: url("https://image.freepik.com/free-vector/hotel-building-isolated-city-street-vector-illustration-flat-cartoon_101884-680.jpg");
+  background-repeat: no-repeat;
+  background-position: 790px 60px;;
+  padding-bottom: 150px;
+
+}
+.hotel_search_div_1{
+  transform: translate(50px, -80px);
+}
+.hotel_search_div_2{
+  transform: translate(0px, -80px);
+}
+.hotel_search_div_2 .card{
+    margin-bottom: 30px;
+}
+.hotel_search_div_2 a{
+  text-decoration:none;
+  color:black;
+}
+.hotel_search_div_1 h1{
+  color: #61085c;
+}
+.hotel_search_div_1 h3{
+  color:#f57a00;
+}
+.hotel_search_div_1 h2{
+  color:#0d71a3;
+}
