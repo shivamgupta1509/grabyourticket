@@ -75,7 +75,7 @@ app.post('/search_flight', (request, response) => {
     var sourceCode = request.body.sourceCode;
     var destinationCode = request.body.destinationCode;
     var date = request.body.date;
-
+    console.log(sourceCode, destinationCode, date);
     var req = unirest("GET", `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/IN/INR/en-IN/${sourceCode}-sky/${destinationCode}-sky/${date}`);
 
     req.headers({

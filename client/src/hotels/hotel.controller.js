@@ -9,6 +9,7 @@
         var hotelCtrl = this;
         hotelCtrl.location = '';
         hotelCtrl.searchHotel = function () {
+            $state.go('hotel-search.get-hotels');
             if (!sessionStorage.getItem('user')) {
                 swal('Please LogIn First!');
                 $state.go('login');
