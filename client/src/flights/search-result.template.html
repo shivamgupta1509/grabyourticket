@@ -1,73 +1,79 @@
-<div class="flight_search_main_div">
-    <div class="flight_search_div_1">
-      <br>
-      <center><h1>Get. Set. Travel.</h1></center>
-      <div class="row">
-        <div class="col-4 offset-sm-7">
-          <br>
-          <center>
-            <div class="row ">
-              <img src="./images/flight_search_result_offer1.jpg" alt="" class="mx-5">
-            </div>
+<div class="flight_search_main_div" ng-if="getFlightCtrl.isFlightAvailable">
+  <div class="flight_search_div_1">
+    <br>
+    <center>
+      <h1>Get. Set. Travel.</h1>
+    </center>
+    <div class="row">
+      <div class="col-4 offset-sm-7">
+        <br>
+        <center>
+          <div class="row">
+            <img src="./images/flight_search_result_offer1.jpg" alt="" class="mx-5">
+          </div>
+          <div class="row">
+            <img src="./images/flight_search_result_offer2.jpg" alt="" class="mx-5">
+          </div>
+        </center>
+      </div>
+    </div>
+  </div>
+  <div class="flight_search_div_2">
+    <div class="row mt-2 d-flex justify-content-center">
+      <div class="col-sm-5" ng-repeat="item in getFlightCtrl.result.Carriers">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <h5> {{ item.Name }} <img
+                src="https://www.pngitem.com/pimgs/m/280-2802882_airplane-flight-travel-aircraft-transparent-background-travel-icon.png"
+                alt="" height="30px"> {{ getFlightCtrl.result.Places[0].Name }}
+              {{getFlightCtrl.result.Places[0].Type}} - {{ getFlightCtrl.result.Places[1].Name }}
+              {{getFlightCtrl.result.Places[1].Type}}</h5>
             <div class="row">
-              <img src="./images/flight_search_result_offer2.jpg" alt="" class="mx-5">
+              <div class="col-4">
+                Price : <b>{{getFlightCtrl.result.Routes[0].Price}}</b>
+              </div>
+              <div class="col-2 offset-2">
+                <div class="row">
+                  <h6>{{getFlightCtrl.result.Places[0].Name}}</h6>
+                </div>
+                <div class="row">
+                  <p>{{getFlightCtrl.result.Places[0].IataCode}}</p>
+                </div>
+              </div>
+              <div class="col-1">
+                <span class="fa fa-long-arrow-alt-right fa-2x"></span>
+              </div>
+              <div class="col-2">
+                <div class="row">
+                  <h6>{{getFlightCtrl.result.Places[1].Name}}</h6>
+                </div>
+                <div class="row">
+                  <p>{{getFlightCtrl.result.Places[1].IataCode}}</p>
+                </div>
+              </div>
             </div>
-          </center>
+            <hr>
+            <form action="#" method="post">
+              <div class="row">
+                <div class="col-1 mx-2">
+                  <label for="classes"><b>classes:</b></label>
+                </div>
+                <div class="col-4">
+                  <input list="classes" name="class" id="class" class="list-input_flight" placeholder="Classes">
+                  <datalist id="classes">
+                    <option value="First">
+                    <option value="Business">
+                    <option value="Economy">
+                  </datalist>
+                </div>
+                <div class="col-4 offset-2">
+                  <button type="button" class="btn btn-success btn-lg"><b>Book Now</b></button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-    <div class="flight_search_div_2">
-      <div class="row mt-2">
-        <div class="col-sm-5 offset-sm-1">
-          <div class="card shadow-lg">
-            <div class="card-body">
-              <h5><img src="https://www.pngitem.com/pimgs/m/280-2802882_airplane-flight-travel-aircraft-transparent-background-travel-icon.png" alt="" height="30px"> Chicago O'Hare International - San Francisco International</h5>
-              <div class = "row">
-                <div class="col-4">
-                  Price range: <b>47$ - 70$</b>
-                </div>
-                <div class="col-2 offset-2">
-                  <div class="row">
-                    <h6>Chicago</h6>
-                  </div>
-                  <div class="row">
-                    <p>CHIA</p>
-                  </div>
-                </div>
-                <div class="col-1">
-                  <span class="fa fa-long-arrow-alt-right fa-2x"></span>
-                </div>
-                <div class="col-2">
-                  <div class="row">
-                    <h6>San Francisco</h6>
-                  </div>
-                  <div class="row">
-                    <p>SFOA</p>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <form action="#" method="post">
-                <div class="row">
-                  <div class="col-1 mx-2">
-                    <label for="classes"><b>classes:</b></label>
-                  </div>
-                  <div class="col-4">
-                    <input list="classes" name="class" id="class" class="list-input_flight">
-                    <datalist id="classes">
-                      <option value="First">
-                      <option value="Business">
-                      <option value="Economy">
-                    </datalist>
-                  </div>
-                  <div class="col-4 offset-2">
-                    <button type="button" class="btn btn-success btn-lg"><b>Book Now</b></button>
-                  </div>
-                </div>
-              </form>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+  </div>
 </div>
