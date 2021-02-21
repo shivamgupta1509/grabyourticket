@@ -1,0 +1,62 @@
+[
+    {
+        "location": "Mumbai",
+        "destinationId": "1640701"
+    },
+    {
+        "location": "Pune",
+        "destinationId": "687594"
+    },
+    {
+        "location": "Mahabaleshwar",
+        "destinationId": "669597"
+    },
+    {
+        "location": "Ahmedabad",
+        "destinationId": "1635863"
+    },
+    {
+        "location": "Jaipur",
+        "destinationId": "687244"
+    },
+    {
+        "location": "Udaipur",
+        "destinationId": "670453"
+    },
+    {
+        "location": "New Delhi",
+        "destinationId": "675357"
+    },
+    {
+        "location": "Agra",
+        "destinationId": "685824"
+    },
+    {
+        "location": "Varanasi",
+        "destinationId": "688906"
+    },
+    {
+        "location": "Gorakhpur",
+        "destinationId": "685740"
+    },
+    {
+        "location": "Allahabad",
+        "destinationId": "680542"
+    },
+    {
+        "location": "Dwarka",
+        "destinationId": "683564"
+    },
+    {
+        "location": "Mathura",
+        "destinationId": "671050"
+    },
+    {
+        "location": "Vrindavan",
+        "destinationId": "672580"
+    },
+    {
+        "location": "Manali",
+        "destinationId": "684951"
+    }
+]

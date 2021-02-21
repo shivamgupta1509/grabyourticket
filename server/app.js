@@ -9,6 +9,8 @@ const passport = require("passport");
 var unirest = require("unirest");
 const session = require("express-session");
 var unirest = require("unirest");
+const destinationId = require("./hotelDestinationId.json");
+
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -94,22 +96,41 @@ app.post('/search_flight', (request, response) => {
 })
 
 app.post("/search_hotel", (req, res) => {
-    var request = unirest("GET", "https://leejaew-hotels-in-singapore-v1.p.rapidapi.com/hotels");
+    var destinationName = req.body.location;
+    for (let i = 0; i < destinationId.length; i++) {
+        const element = destinationId[i];
+        if (element.location == destinationName) {
+            var id = element.destinationId;
+            break
+        }
+    }
+
+    var request = unirest("GET", "https://hotels4.p.rapidapi.com/properties/list");
+
     request.query({
-        "country": req.body.location
+        "destinationId": id,
+        "pageNumber": "1",
+        "checkIn": req.body.checkIn,
+        "checkOut": req.body.checkOut,
+        "pageSize": "25",
+        "adults1": "1",
+        "currency": "INR",
+        "locale": "en_IN",
+        "sortOrder": "PRICE"
     });
 
     request.headers({
-        "x-rapidapi-key": process.env.RAPID_API_KEY,
-        "x-rapidapi-host": "leejaew-hotels-in-singapore-v1.p.rapidapi.com",
+        "x-rapidapi-key": "c639e3c3b0msh4b52d4bb9e0cf90p1219c5jsn177926434628",
+        "x-rapidapi-host": "hotels4.p.rapidapi.com",
         "useQueryString": true
     });
 
+
     request.end(function (response) {
         if (response.error) throw new Error(response.error);
-        op = response.body
-        console.log(op[0]);
-        res.send({ hotel: op });
+
+        console.log(response.body);
+        res.send({ hotelData: response.body });
     });
 });
 
