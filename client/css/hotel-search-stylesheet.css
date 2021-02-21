@@ -1,0 +1,36 @@
+#hotel-searchResult-card{
+    height: 270px;
+}
+#hotel_img { 
+    margin: auto;
+    height: 230px;
+    width: 100%; 
+    border-style: groove;
+    border-radius: 10px;
+  }
+  #hotel_name {
+    font-size: 30px;
+    color: rgb(40, 40, 216);
+    font-family: "Jomhuria", cursive;
+    
+  }
+  #hotel_add {
+    padding: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+  .fa-star {
+    color: orange;
+    font-size: 15px;
+  }
+  #detail_btn {
+    margin: auto;
+    font-family: cursive;
+  }
+  #rate{
+      background-color: blue;
+      padding: 3px;
+      color: #ffffff;
+      border-style: solid;
+      border-radius: 3px;
+  }
