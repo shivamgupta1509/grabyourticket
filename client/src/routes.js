@@ -46,7 +46,8 @@
             })
             .state('hotel-search.get-hotels', {
                 url: '/get-hotels',
-                templateUrl: 'src/hotels/hotel-search-result.template.html'
+                templateUrl: 'src/hotels/hotel-search-result.template.html',
+                controller: 'GetHotelController as getHotelCtrl'
             })
             .state('login', {
                 url: '/login',

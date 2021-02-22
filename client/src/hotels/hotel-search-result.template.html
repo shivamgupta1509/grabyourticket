@@ -23,37 +23,42 @@
   <div class="hotel_search_div_2">
     <div class="row mt-2 d-flex justify-content-center">
 
-      <div class="col-sm-4">
+      <div class="col-sm-4" ng-repeat="hotel in getHotelCtrl.result">
         <div class="card shadow-lg">
-          <img src="https://thumbnails.trvl-media.com/MqTYY0PsuJy7WKp-pDg0n7XVzyg=/250x140/smart/filters:quality(60)/images.trvl-media.com/hotels/19000000/18360000/18354900/18354839/937928c1_z.jpg" alt="">
+          <img src="{{hotel.optimizedThumbUrls.srpDesktop}}" alt="">
           <div class="card-body">
             <div class="row">
               <div class="col-9">
-                <h5><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlZEptWHHP0z6LRqJ1G8kiPXDeqQhlb4aojQ&usqp=CAU" alt="" height="30px"> Marina Bay Sands</h5>
+                <h5><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlZEptWHHP0z6LRqJ1G8kiPXDeqQhlb4aojQ&usqp=CAU"
+                    alt="" height="30px"> {{hotel.name}}</h5>
               </div>
               <div class="col-3" style="color:black; text-shadow: 0 0 2px #000;">
-                <h3>5<span class="fas fa-star fa-sm mx-2" style="color:yellow; text-shadow: 0 0 3px #000;"></span></h3>
+                <h3>{{hotel.starRating}}<span class="fas fa-star fa-sm mx-2"
+                    style="color:yellow; text-shadow: 0 0 3px #000;"></span></h3>
               </div>
             </div>
 
-            <div class = "row">
+            <div class="row">
               <div class="col-4 ml-2 mt-4">
                 <div class="row">
-                  <h6><span class="fas fa-money-bill-wave fa-lg ml-2"></span> Rs.2561</h6>
+                  <h6><span class="fas fa-money-bill-wave fa-lg ml-2"></span>{{hotel.ratePlan.price.current}}
+                  </h6>
                 </div>
 
               </div>
               <div class="col mr-0">
                 <div class="row   d-flex justify-content-end">
-                  <img src="https://i.pinimg.com/originals/66/1e/98/661e98a8e38f681575da93d0a1c3f4fc.png" height="24px" alt="">
+                  <img src="https://i.pinimg.com/originals/66/1e/98/661e98a8e38f681575da93d0a1c3f4fc.png" height="24px"
+                    alt="">
                 </div>
               </div>
               <div class="col-auto mr-4 ml-1">
                 <div class="row  d-flex justify-content-end">
-                  <h6>10 Bayfront Avenue</h6>
+                  <h6>{{hotel.address.streetAddress}}</h6>
                 </div>
                 <div class="row d-flex justify-content-end">
-                  <h6>Singapore - 18956</h6>
+                  <h6>{{hotel.address.locality}} - {{hotel.address.postalCode}}</h6>
                 </div>
               </div>
             </div>
@@ -66,26 +71,12 @@
                 </div>
               </div>
             </form>
-            </div>
-
-            <hr>
-            <form action="#" method="post">
-              <div class="row">
-                <div class="col-6">
-                  <h5><img src="https://cdn.iconscout.com/icon/free/png-256/phone-call-16-1172958.png" alt=""
-                      height="22px"> +65-66888866</h5>
-                </div>
-                <div class="col-4 offset-2">
-                  <button type="button" class="btn btn-success btn-lg"><b>Book Now</b></button>
-                </div>
-              </div>
-            </form>
-
           </div>
-         </div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-
+</div>
+</div>
