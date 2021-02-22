@@ -477,3 +477,21 @@ ___________________________________Hotel Search Result Page_____________________
 .hotel_search_div_1 h2{
   color:#0d71a3;
 }
+h3 .fas-star-icon{
+  margin-top: 10px;
+  margin-bottom: 10px;;
+  color:yellow; 
+  text-shadow: 0 0 3px #000;
+  font-size: 30px;
+}
+.hotel-star-div{
+  background-color: black; 
+  opacity: 0.8;
+  border-radius: 10px;;
+}
+.hotel-search-result-card{
+  border-radius: 10px;
+}
+.hotel-search-result-card:hover {
+  transform: scale(1.01);
+}
