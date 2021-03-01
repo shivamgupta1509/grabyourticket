@@ -495,3 +495,14 @@ h3 .fas-star-icon{
 .hotel-search-result-card:hover {
   transform: scale(1.01);
 }
+/* ****************************************************************************************************
+___________________________________Booking History Page____________________________________________
+**************************************************************************************************** */
+.booking-history-div{
+  background-image: url("https://www.serverless360.com/wp-content/uploads/2019/07/cab-booking-event-grid-01.png");
+  opacity: 0.2;
+  height: 300px;;
+}
+.booking-history-overlap{
+  transform: translate(0px, -200px);
+}

@@ -35,24 +35,6 @@
         </div>
         <!--input2-->
   
-        <div id="input3">
-          <!--input3-->
-          <span style="margin-left: 50px;" class="text-primary">Select Your Fare</span>
-          <input type="radio" style="margin-left: 50px;" name="r" value="Single">
-          <label class="text-white" for="input-group">Single</label>
-          <input type="radio" style="margin-left: 50px;" name="r" value="Return">
-          <label class="text-white" for="input-group">Returning</label>
-        </div>
-        <!--input3-->
-  
-        <div id="input4">
-          <!--input4-->
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Return Date" name="ReturnDate">
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Return time" name="ReturnTime">
-          <input type="text" style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Any Message">
-        </div>
-        <!--input4-->
-  
         <div id="input5">
           <!--input5-->
           <h3 class="text-white" style="border-bottom: 2px solid #3399ff;
@@ -125,18 +107,6 @@
       var x = document.forms["myForm"]["Infant"].value;
       if (x == "") {
         alert("Please Fill Infant row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["ReturnDate"].value;
-      if (x == "") {
-        alert("Please Fill Return Date");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["ReturnTime"].value;
-      if (x == "") {
-        alert("Please Fill Return time");
         return false;
       }
   
