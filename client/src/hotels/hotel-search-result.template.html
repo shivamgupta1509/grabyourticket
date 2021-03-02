@@ -83,13 +83,16 @@
           <div class="card-body">
             <div class="row">
               <div class="col-auto">
-                <h5><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlZEptWHHP0z6LRqJ1G8kiPXDeqQhlb4aojQ&usqp=CAU" alt="" height="30px"><b> {{hotel.name}}</b></h5>
+                <h5><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlZEptWHHP0z6LRqJ1G8kiPXDeqQhlb4aojQ&usqp=CAU"
+                    alt="" height="30px"><b> {{hotel.name}}</b></h5>
               </div>
             </div>
             <div class="row">
               <div class="col-1 ml-3">
                 <div class="row">
-                  <img src="https://i.pinimg.com/originals/66/1e/98/661e98a8e38f681575da93d0a1c3f4fc.png" height="30px"  alt="">
+                  <img src="https://i.pinimg.com/originals/66/1e/98/661e98a8e38f681575da93d0a1c3f4fc.png" height="30px"
+                    alt="">
                 </div>
               </div>
               <div class="row">
@@ -105,7 +108,8 @@
             </div>
             <div class="col-3 ml-1 mt-1">
               <div class="row">
-                <h6 ng-if="hotel.ratePlan.price.current"><span class="fas fa-money-bill-wave fa-lg mr-1"></span>{{hotel.ratePlan.price.current}}
+                <h6 ng-if="hotel.ratePlan.price.current"><span
+                    class="fas fa-money-bill-wave fa-lg mr-1"></span>{{hotel.ratePlan.price.current}}
                 </h6>
               </div>
             </div>
@@ -113,7 +117,8 @@
             <form action="#" method="post">
               <div class="row">
                 <div class="col">
-                  <button type="button" class="btn btn-success btn-lg"><b>Book Now</b></button>
+                  <button type="button" ng-click="getHotelCtrl.bookForm();" class="btn btn-success btn-lg"><b>Book
+                      Now</b></button>
                 </div>
               </div>
             </form>

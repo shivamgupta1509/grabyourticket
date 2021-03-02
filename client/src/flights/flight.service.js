@@ -8,7 +8,14 @@
     function FlightService($http, ServerUrl) {
         var service = this;
         service.getSearchedFlights = {}
-        service.searchFlightService = function (sourceCode, destinationCode, date) {
+        service.sourceName = "";
+        service.destinationName = "";
+        service.date = "";
+        service.searchFlightService = function (sourceCode, destinationCode, date, sourceName, destinationName) {
+            service.sourceName = sourceName;
+            service.destinationName = destinationName;
+            service.date = date;
+            service.airlineName
             var data = {
                 sourceCode: sourceCode,
                 destinationCode: destinationCode,
@@ -23,6 +30,15 @@
 
         service.getAllFlights = function () {
             return service.getSearchedFlights
+        }
+
+        service.airlineName = function (airlineName) {
+            service.airlineName = airlineName;
+            return airlineName;
+        }
+
+        service.getSourceAndDestinationName = function () {
+            return { sourceName: service.sourceName, destinationName: service.destinationName, date: service.date, airlineName: service.airlineName }
         }
     }
 })();

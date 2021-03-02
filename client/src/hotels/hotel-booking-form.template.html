@@ -1,133 +1,94 @@
 <div class="container">
-    <!--container-->
-  
-    <form name="myForm" class="form-group" onsubmit="return validateForm()" method="post" style="background-color: #000;color:#fff;height: 525px;width: 700px;margin: auto;padding: 20px;opacity: 0.7;">
+  <!--container-->
+
+  <form name="myForm" class="form-group" onsubmit="return validateForm()" method="post"
+    style="background-color: #000;color:#fff;height: 555px;width: 700px;margin: auto;padding: 20px;opacity: 0.7;">
+    <!--form-->
+    <h1 class="text-center">Hotel Booking Form</h1>
+
+    <div id="form">
       <!--form-->
-      <h1 class="text-center">Hotel Booking Form</h1>
-  
-      <div id="form">
-        <!--form-->
-        <h3 style ="border-bottom: 2px solid #3399ff;width: 210px;padding: 5px;" class="text-white">Booking Details</h3>
-  
-        <div id="input">
-          <!--input-->
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Arrival Date" name="ArrivalDate">
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Arrival Time" name="ArrivalTime">
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Departure Date" name="DepartureDate">
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none; border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Departure Time" name="DepartureTime">
-          <input type="text" style="width: 300px; margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Hotel Name" name="HotelName">
-  
-          <select style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent; background-color:black;color: #fff;" name="RoomType">
-            <option value="">Preferred Room</option>
-            <option value="Standard Room">Standard Room(1 to 2 people)</option>
-            <option value="Family Room">Family Room(1 to 4 people)</option>
-            <option value="Private Room">Private Room(1 to 3 people)</option>
-            <option value="Mix Dorm Room">Mix Dorm Room(1 to 6 people)</option>
-          </select>
-        </div>
+      <h3 style="border-bottom: 2px solid #3399ff;width: 210px;padding: 5px;" class="text-white">Booking Details</h3>
+
+      <div id="input">
         <!--input-->
-  
-        <div id="input2">
-          <!--input2-->
-          <input type="number" style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Adult" name="Adult">
-          <input type="number" style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Children(2-11years)" name="Children">
-          <input type="number" style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Infant(under 2years)" name="Infant">
-        </div>
+        <input type="text"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Arrival Date" name="ArrivalDate">
+        <input type="text"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Arrival Time" name="ArrivalTime">
+        <input type="text"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Departure Date" name="DepartureDate">
+        <input type="text"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none; border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Departure Time" name="DepartureTime">
+        <input type="text"
+          style="width: 300px; margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Hotel Name" name="HotelName">
+
+        <select
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent; background-color:black;color: #fff;"
+          name="RoomType">
+          <option value="">Preferred Room</option>
+          <option value="Standard Room">Standard Room(1 to 2 people)</option>
+          <option value="Family Room">Family Room(1 to 4 people)</option>
+          <option value="Private Room">Private Room(1 to 3 people)</option>
+          <option value="Mix Dorm Room">Mix Dorm Room(1 to 6 people)</option>
+        </select>
+      </div>
+      <!--input-->
+
+      <div id="input2">
         <!--input2-->
-  
-  
-        <div id="input5">
-          <!--input5-->
-          <h3 class="text-white" style="border-bottom: 2px solid #3399ff;
+        <input type="number"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Adult" name="Adult">
+        <input type="number"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Children(2-11years)" name="Children">
+        <input type="number"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Infant(under 2years)" name="Infant">
+      </div>
+      <!--input2-->
+
+      <div id="input4">
+        <!--input4-->
+        <input type="text"
+          style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Any Message">
+      </div>
+      <!--input4-->
+
+      <div id="input5">
+        <!--input5-->
+        <h3 class="text-white" style="border-bottom: 2px solid #3399ff;
           width: 220px;
           padding: 5px;">Personal Details</h3>
-        </div>
-        <!--input5-->
-  
-        <div id="input6">
-          <!--input6-->
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Full Name" name="FullName">
-          <input type="Text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Phone Number" name="PhoneNumber">
-          <input type="email" style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Email" name="Email">
-        </div>
-        <!--input6-->
-        <button type="submit" class="btn btn-warning text-white"><b>Submit Form</b></button>
-        <button type="reset" class="btn btn-primary"><b>Clear Form</b></button>
       </div>
-      <!--form-->
-  
-    </form>
+      <!--input5-->
+
+      <div id="input6">
+        <!--input6-->
+        <input type="text"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Full Name" name="FullName">
+        <input type="Text"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Phone Number" name="PhoneNumber">
+        <input type="email"
+          style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Email" name="Email">
+      </div>
+      <!--input6-->
+      <button type="submit" class="btn btn-warning text-white"><b>Submit Form</b></button>
+    </div>
     <!--form-->
-  
-  </div>
-  <!--container-->
-  <script>
-    function validateForm() {
-      var x = document.forms["myForm"]["ArrivalDate"].value;
-      if (x == "") {
-        alert("Please fill From row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["ArrivalTime"].value;
-      if (x == "") {
-        alert("Please fill To row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["DepartureDate"].value;
-      if (x == "") {
-        alert("Please fill Departure Date");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["DepartureTime"].value;
-      if (x == "") {
-        alert("Please fill Departure Time");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["HotelName"].value;
-      if (x == "") {
-        alert("Please fill AirlineName");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["Adult"].value;
-      if (x == "") {
-        alert("Please Fill Adult row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["Children"].value;
-      if (x == "") {
-        alert("Please Fill Children row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["Infant"].value;
-      if (x == "") {
-        alert("Please Fill Infant row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["FullName"].value;
-      if (x == "") {
-        alert("Please Fill Full Name");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["PhoneNumber"].value;
-      if (x == "") {
-        alert("Please Fill Phone Number");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["Email"].value;
-      if (x == "") {
-        alert("Please Fill Email");
-        return false;
-      }
-  
-    }
-  </script>
+
+  </form>
+  <!--form-->
+
+</div>
+<!--container-->

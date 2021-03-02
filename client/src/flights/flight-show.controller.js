@@ -4,8 +4,8 @@
     angular.module('GrabYourTicketApp')
         .controller('GetFlightController', GetFlightController);
 
-    GetFlightController.$inject = ['FlightService'];
-    function GetFlightController(FlightService) {
+    GetFlightController.$inject = ['FlightService', '$state'];
+    function GetFlightController(FlightService, $state) {
         var getFlightCtrl = this;
         getFlightCtrl.isFlightAvailable = false;
         getFlightCtrl.result = FlightService.getAllFlights();
@@ -15,6 +15,13 @@
         } else {
             console.log('Result: ', getFlightCtrl.result);
             getFlightCtrl.isFlightAvailable = true;
+        }
+
+        getFlightCtrl.bookForm = function (airlineName) {
+            var response = FlightService.airlineName(airlineName.Name);
+            if (response) {
+                $state.go('flight-book-form');
+            }
         }
     }
 })();

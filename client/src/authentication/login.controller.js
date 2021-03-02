@@ -20,6 +20,7 @@
                 } else if (data.login) {
                     // $window.localStorage.setItem('username', loginCtrl.username);
                     sessionStorage.user = data.user;
+                    sessionStorage.fullName = data.fullName;
                     $rootScope.user = data.user;
                     swal("LoggedIn Successfully!", "Click the Below Button!", "success");
                     $location.path('home');

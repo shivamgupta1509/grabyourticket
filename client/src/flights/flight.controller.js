@@ -19,8 +19,10 @@
                 $state.go('flight-search');
                 var date = document.getElementById('date-of-travel').value;
                 var sourceCode = flightCtrl.source.split('-')[1]
+                var sourceName = flightCtrl.source.split('-')[0]
                 var destinationCode = flightCtrl.destination.split('-')[1]
-                var response = FlightService.searchFlightService(sourceCode, destinationCode, date)
+                var destinationName = flightCtrl.destination.split('-')[0]
+                var response = FlightService.searchFlightService(sourceCode, destinationCode, date, sourceName, destinationName)
                 response.then(data => {
                     console.log(data.flightData);
                     if (data.flightData.Carriers.length !== 0) {
