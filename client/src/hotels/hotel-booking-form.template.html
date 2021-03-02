@@ -84,7 +84,6 @@
       </div>
       <!--input6-->
       <button type="submit" class="btn btn-warning text-white"><b>Submit Form</b></button>
-      <button type="reset" class="btn btn-primary"><b>Clear Form</b></button>
     </div>
     <!--form-->
 
@@ -93,73 +92,3 @@
 
 </div>
 <!--container-->
-<script>
-  function validateForm() {
-    var x = document.forms["myForm"]["ArrivalDate"].value;
-    if (x == "") {
-      alert("Please fill From row");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["ArrivalTime"].value;
-    if (x == "") {
-      alert("Please fill To row");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["DepartureDate"].value;
-    if (x == "") {
-      alert("Please fill Departure Date");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["DepartureTime"].value;
-    if (x == "") {
-      alert("Please fill Departure Time");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["HotelName"].value;
-    if (x == "") {
-      alert("Please fill AirlineName");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["Adult"].value;
-    if (x == "") {
-      alert("Please Fill Adult row");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["Children"].value;
-    if (x == "") {
-      alert("Please Fill Children row");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["Infant"].value;
-    if (x == "") {
-      alert("Please Fill Infant row");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["FullName"].value;
-    if (x == "") {
-      alert("Please Fill Full Name");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["PhoneNumber"].value;
-    if (x == "") {
-      alert("Please Fill Phone Number");
-      return false;
-    }
-
-    var x = document.forms["myForm"]["Email"].value;
-    if (x == "") {
-      alert("Please Fill Email");
-      return false;
-    }
-
-  }
-</script>
