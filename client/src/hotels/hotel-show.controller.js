@@ -4,8 +4,8 @@
     angular.module('GrabYourTicketApp')
         .controller('GetHotelController', GetHotelController);
 
-    GetHotelController.$inject = ['HotelService'];
-    function GetHotelController(HotelService) {
+    GetHotelController.$inject = ['HotelService', '$state'];
+    function GetHotelController(HotelService, $state) {
         var getHotelCtrl = this;
         getHotelCtrl.isHotelAvailable = false;
         getHotelCtrl.result = HotelService.getAllSearchedHotels();
@@ -15,6 +15,10 @@
             getHotelCtrl.isHotelAvailable = true;
         } else {
             getHotelCtrl.isHotelAvailable = false;
+        }
+
+        getHotelCtrl.bookForm = function () {
+            $state.go('hotel-book-form');
         }
     }
 })();

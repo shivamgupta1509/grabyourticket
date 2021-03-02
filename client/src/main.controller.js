@@ -13,6 +13,7 @@
             response.then(data => {
                 if (data.logout) {
                     delete sessionStorage.user;
+                    delete sessionStorage.fullName;
                     $rootScope.user = undefined;
                     swal("LoggedOut Successfully!", "Click the Below Button!", "success");
                     $location.path('home');

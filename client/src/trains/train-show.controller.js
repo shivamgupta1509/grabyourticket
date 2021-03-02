@@ -9,8 +9,11 @@
         var getTrainCtrl = this;
         getTrainCtrl.result = TrainService.getMatchedTrains();
 
-        getTrainCtrl.bookNow = function () {
-            $state.go('train-book-form')
+        getTrainCtrl.bookNow = function (data, trainName, trainNumber) {
+            var response = TrainService.addTrainDetails(data.departTime, trainName, trainNumber);
+            if (response) {
+                $state.go('train-book-form')
+            }
         }
     }
 })();

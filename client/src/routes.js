@@ -31,10 +31,6 @@
                 templateUrl: 'src/trains/search-result.template.html',
                 controller: 'GetTrainController as getTrainCtrl'
             })
-            .state('train-book-form', {
-                url: '/train-book-form',
-                templateUrl: 'src/trains/booking-form.template.html'
-            })
             .state('bus-search', {
                 url: '/bus-search',
                 templateUrl: 'src/bus/bus-search.template.html'
@@ -48,6 +44,20 @@
                 url: '/get-hotels',
                 templateUrl: 'src/hotels/hotel-search-result.template.html',
                 controller: 'GetHotelController as getHotelCtrl'
+            })
+            .state('flight-book-form', {
+                url: '/flight-booking-form',
+                templateUrl: 'src/flights/flight-booking-form.template.html',
+                controller: 'FlightBookController as flightBookCtrl'
+            })
+            .state('train-book-form', {
+                url: '/train-book-form',
+                templateUrl: 'src/trains/booking-form.template.html',
+                controller: 'TrainBookController as trainBookCtrl'
+            })
+            .state('hotel-book-form', {
+                url: '/hotel-booking-form',
+                templateUrl: 'src/hotels/hotel-booking-form.template.html'
             })
             .state('login', {
                 url: '/login',

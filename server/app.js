@@ -167,7 +167,7 @@ app.post("/login", (req, res) => {
         } else {
             passport.authenticate("local")(req, res, () => {
                 req.session.user = req.user;
-                res.send({ login: true, user: req.session.user.username });
+                res.send({ login: true, user: req.session.user.username, fullName: req.session.user.fullname });
             })
         }
     })

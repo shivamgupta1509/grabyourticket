@@ -21,7 +21,7 @@
                 var searchTrain = splittedSourceName[0];
                 var sourceTrainCode = splittedSourceName[1];
                 var destinationTrainCode = splittedDestinationName[1];
-                var response = TrainService.searchTrain(searchTrain, sourceTrainCode, destinationTrainCode, trainCtrl.date);
+                var response = TrainService.searchTrain(searchTrain, sourceTrainCode, destinationTrainCode, trainCtrl.date, splittedSourceName[0], splittedDestinationName[0]);
                 response.then(data => {
                     if (data.trainData.length != 0) {
                         trainCtrl.matchedTrains = data.trainData;

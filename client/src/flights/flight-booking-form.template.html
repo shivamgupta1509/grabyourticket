@@ -1,162 +1,166 @@
 <div class="container">
-    <!--container-->
-  
-    <form name="myForm" class="form-group" onsubmit="return validateForm()" method="post" style="background-color: #000;color:#fff;height: 600px;width: 700px;margin: auto;padding: 20px;opacity: 0.7;">
+  <!--container-->
+
+  <form name="myForm" class="form-group" ng-submit="flightBookCtrl.book();" method="post"
+    style="background-color: #000;color:#fff;height: 640px;width: 700px;margin: auto;padding: 20px;opacity: 0.7;">
+    <!--form-->
+    <h1 class="text-center">Flight Booking Form</h1>
+
+    <div id="form">
       <!--form-->
-      <h1 class="text-center">Flight Booking Form</h1>
-  
-      <div id="form">
-        <!--form-->
-        <h3 style ="border-bottom: 2px solid #3399ff;width: 210px;padding: 5px;" class="text-white">Booking Details</h3>
-  
-        <div id="input">
-          <!--input-->
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="From" name="from">
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="To" name="to">
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Departure Date" name="DeapartureDate">
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none; border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Departure Time" name="DepartureTime">
-          <input type="text" style="width: 300px; margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Airline Name" name="AirlineName">
-  
-          <select style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent; background-color:black;color: #fff;" name="Class">
-            <option value="">Preferred Class</option>
-            <option value="Economy">Economy</option>
-            <option value="Premium Economy">Premium Economy</option>
-            <option value="Business">Business</option>
-            <option value="First">First</option>
-          </select>
-        </div>
+      <h3 style="border-bottom: 2px solid #3399ff;width: 210px;padding: 5px;" class="text-white">Booking Details</h3>
+
+      <div id="input">
         <!--input-->
-  
-        <div id="input2">
-          <!--input2-->
-          <input type="number" style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Adult" name="Adult">
-          <input type="number" style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Children(2-11years)" name="Children">
-          <input type="number" style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Infant(under 2years)" name="Infant">
-        </div>
+        <input type="text" ng-model="flightBookCtrl.sourceName" ng-disabled="flightBookCtrl.sourceName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="From" name="from">
+        <input type="text" ng-model="flightBookCtrl.destinationName" ng-disabled="flightBookCtrl.destinationName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="To" name="to">
+        <input type="text" ng-model="flightBookCtrl.date" ng-disabled="flightBookCtrl.date"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Departure Date" name="DeapartureDate">
+        <input type="text" ng-model="flightBookCtrl.departureTime" style=" width: 300px;margin: 5px;border-top: none;border-left: none; border-right: none;outline:
+          none;background: transparent;color: #fff;" placeholder="Departure Time" name="DepartureTime">
+        <input type="text" ng-model="flightBookCtrl.airlineName" ng-disabled="flightBookCtrl.airlineName"
+          style="width: 300px; margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Airline Name" name="AirlineName">
+
+        <select ng-model="flightBookCtrl.class"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent; background-color:black;color: #fff;"
+          name="Class">
+          <option value="">Preferred Class</option>
+          <option value="Economy">Economy</option>
+          <option value="Premium Economy">Premium Economy</option>
+          <option value="Business">Business</option>
+          <option value="First">First</option>
+        </select>
+      </div>
+      <!--input-->
+
+      <div id="input2">
         <!--input2-->
-  
-        <div id="input3">
-          <!--input3-->
-          <span style="margin-left: 50px;" class="text-primary">Select Your Fare</span>
-          <input type="radio" style="margin-left: 50px;" name="r" value="Single">
-          <label class="text-white" for="input-group">Single</label>
-          <input type="radio" style="margin-left: 50px;" name="r" value="Return">
-          <label class="text-white" for="input-group">Returning</label>
-        </div>
-        <!--input3-->
-  
-        <div id="input4">
-          <!--input4-->
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Return Date" name="ReturnDate">
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Return time" name="ReturnTime">
-          <input type="text" style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Any Message">
-        </div>
-        <!--input4-->
-  
-        <div id="input5">
-          <!--input5-->
-          <h3 class="text-white" style="border-bottom: 2px solid #3399ff;
+        <input type="number" ng-model="flightBookCtrl.adult"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Adult" name="Adult">
+        <input type="number" ng-model="flightBookCtrl.children"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Children(2-11years)" name="Children">
+        <input type="number" ng-model="flightBookCtrl.infant"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Infant(under 2years)" name="Infant">
+      </div>
+
+      <div id="input5">
+        <!--input5-->
+        <h3 class="text-white" style="border-bottom: 2px solid #3399ff;
           width: 220px;
           padding: 5px;">Personal Details</h3>
-        </div>
-        <!--input5-->
-  
-        <div id="input6">
-          <!--input6-->
-          <input type="text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Full Name" name="FullName">
-          <input type="Text" style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Phone Number" name="PhoneNumber">
-          <input type="email" style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;" placeholder="Email" name="Email">
-        </div>
-        <!--input6-->
-        <button type="submit" class="btn btn-warning text-white"><b>Submit Form</b></button>
-        <button type="reset" class="btn btn-primary"><b>Clear Form</b></button>
       </div>
-      <!--form-->
-  
-    </form>
+      <!--input5-->
+
+      <div id="input6">
+        <!--input6-->
+        <input type="text" ng-model="flightBookCtrl.fullName" ng-disabled="flightBookCtrl.fullName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Full Name" name="FullName">
+        <input type="text" ng-model="flightBookCtrl.phoneNo"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Phone Number" name="PhoneNumber">
+        <input type="email" ng-model="flightBookCtrl.email" ng-disabled="flightBookCtrl.email"
+          style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Email" name="Email">
+      </div>
+      <!--input6-->
+      <button type="submit" class="btn btn-warning text-white"><b>Submit Form</b></button>
+    </div>
     <!--form-->
-  
-  </div>
-  <!--container-->
-  <script>
-    function validateForm() {
-      var x = document.forms["myForm"]["from"].value;
-      if (x == "") {
-        alert("Please fill From row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["to"].value;
-      if (x == "") {
-        alert("Please fill To row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["DepartureDate"].value;
-      if (x == "") {
-        alert("Please fill Departure Date");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["DepartureTime"].value;
-      if (x == "") {
-        alert("Please fill Departure Time");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["AirlineName"].value;
-      if (x == "") {
-        alert("Please fill AirlineName");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["Adult"].value;
-      if (x == "") {
-        alert("Please Fill Adult row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["Children"].value;
-      if (x == "") {
-        alert("Please Fill Children row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["Infant"].value;
-      if (x == "") {
-        alert("Please Fill Infant row");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["ReturnDate"].value;
-      if (x == "") {
-        alert("Please Fill Return Date");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["ReturnTime"].value;
-      if (x == "") {
-        alert("Please Fill Return time");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["FullName"].value;
-      if (x == "") {
-        alert("Please Fill Full Name");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["PhoneNumber"].value;
-      if (x == "") {
-        alert("Please Fill Phone Number");
-        return false;
-      }
-  
-      var x = document.forms["myForm"]["Email"].value;
-      if (x == "") {
-        alert("Please Fill Email");
-        return false;
-      }
-  
+
+  </form>
+  <!--form-->
+
+</div>
+<!--container-->
+<script>
+  function validateForm() {
+    var x = document.forms["myForm"]["from"].value;
+    if (x == "") {
+      alert("Please fill From row");
+      return false;
     }
-  </script>
+
+    var x = document.forms["myForm"]["to"].value;
+    if (x == "") {
+      alert("Please fill To row");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["DepartureDate"].value;
+    if (x == "") {
+      alert("Please fill Departure Date");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["DepartureTime"].value;
+    if (x == "") {
+      alert("Please fill Departure Time");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["AirlineName"].value;
+    if (x == "") {
+      alert("Please fill AirlineName");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["Adult"].value;
+    if (x == "") {
+      alert("Please Fill Adult row");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["Children"].value;
+    if (x == "") {
+      alert("Please Fill Children row");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["Infant"].value;
+    if (x == "") {
+      alert("Please Fill Infant row");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["ReturnDate"].value;
+    if (x == "") {
+      alert("Please Fill Return Date");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["ReturnTime"].value;
+    if (x == "") {
+      alert("Please Fill Return time");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["FullName"].value;
+    if (x == "") {
+      alert("Please Fill Full Name");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["PhoneNumber"].value;
+    if (x == "") {
+      alert("Please Fill Phone Number");
+      return false;
+    }
+
+    var x = document.forms["myForm"]["Email"].value;
+    if (x == "") {
+      alert("Please Fill Email");
+      return false;
+    }
+
+  }
+</script>
