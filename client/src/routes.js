@@ -57,7 +57,8 @@
             })
             .state('hotel-book-form', {
                 url: '/hotel-booking-form',
-                templateUrl: 'src/hotels/hotel-booking-form.template.html'
+                templateUrl: 'src/hotels/hotel-booking-form.template.html',
+                controller: 'HotelBookController as hotelBookCtrl'
             })
             .state('login', {
                 url: '/login',

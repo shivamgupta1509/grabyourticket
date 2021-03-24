@@ -7,8 +7,13 @@
     HotelService.$inject = ['$http', 'ServerUrl'];
     function HotelService($http, ServerUrl) {
         var service = this;
+        service.hotelName = '';
+        service.checkInDate = '';
+        service.checkOutDate = '';
         // service.getSearchedHotels = {}
         service.hotelSearchService = function (location, checkIn, checkOut) {
+            service.checkInDate = checkIn;
+            service.checkOutDate = checkOut;
             var data = {
                 location: location,
                 checkIn: checkIn,
@@ -24,6 +29,15 @@
 
         service.getAllSearchedHotels = function () {
             return service.getSearchedHotels;
+        }
+
+        service.addHotelDetails = function (name) {
+            service.hotelName = name;
+            return true;
+        }
+
+        service.getHotelDetails = function () {
+            return { hotelName: service.hotelName, checkInDate: service.checkInDate, checkOutDate: service.checkOutDate }
         }
     }
 })();

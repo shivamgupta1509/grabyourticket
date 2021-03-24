@@ -17,8 +17,11 @@
             getHotelCtrl.isHotelAvailable = false;
         }
 
-        getHotelCtrl.bookForm = function () {
-            $state.go('hotel-book-form');
+        getHotelCtrl.bookForm = function (hotelName) {
+            var response = HotelService.addHotelDetails(hotelName);
+            if (response) {
+                $state.go('hotel-book-form');
+            }
         }
     }
 })();
