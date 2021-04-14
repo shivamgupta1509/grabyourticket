@@ -11,6 +11,14 @@
         service.sourceName = "";
         service.destinationName = "";
         service.date = "";
+        service.departureTime = "";
+        service.classes = "";
+        service.adult = "";
+        service.children = "";
+        service.infant = "";
+        service.message = "";
+        service.phoneNo = "";
+
         service.searchFlightService = function (sourceCode, destinationCode, date, sourceName, destinationName) {
             service.sourceName = sourceName;
             service.destinationName = destinationName;
@@ -39,6 +47,25 @@
 
         service.getSourceAndDestinationName = function () {
             return { sourceName: service.sourceName, destinationName: service.destinationName, date: service.date, airlineName: service.airlineName }
+        }
+
+        service.bookFlightTicket = function (departureTime, classes, adult, children, infant, message, phoneNo){
+            var data = {
+                departureTime : departureTime,
+                class : classes,
+                adult : adult,
+                children : children,
+                infant : infant,
+                message : message,
+                phoneNo : phoneNo
+
+            };
+            console.log("Calling.......");
+            return $http.post(ServerUrl + '/book_flight_ticket', data)
+                .then(response => {
+                    // service.getSearchedFlights = response.data.flightData;
+                    return response.data
+                })
         }
     }
 })();
