@@ -19,9 +19,9 @@ TicketSchema = new mongoose.Schema({
         type: String,
         enum: ['Flight', 'Hotel', 'Train'],
       },
-    no_of_adults : Number,
-    no_of_childrens : Number,
-    no_of_infants : Number
+    no_of_adults : String,
+    no_of_childrens : String,
+    no_of_infants : String
 })
 
 module.exports= mongoose.model("Ticket", TicketSchema)

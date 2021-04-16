@@ -4,8 +4,8 @@
     angular.module('GrabYourTicketApp')
         .controller('FlightBookController', FlightBookController);
 
-    FlightBookController.$inject = ['FlightService'];
-    function FlightBookController(FlightService) {
+    FlightBookController.$inject = ['FlightService', '$state'];
+    function FlightBookController(FlightService, $state) {
         var flightBookCtrl = this;
         flightBookCtrl.fullName = sessionStorage.getItem('fullName');
         flightBookCtrl.email = sessionStorage.getItem('user');
@@ -20,17 +20,27 @@
         flightBookCtrl.adult = '';
         flightBookCtrl.children = '';
         flightBookCtrl.infant = '';
+        flightBookCtrl.message = '';
         flightBookCtrl.phoneNo = '';
 
         flightBookCtrl.book = function () {
 
             console.log(flightBookCtrl.departureTime);
-            console.log(flightBookCtrl.class);
+            console.log(flightBookCtrl.classes);
             console.log(flightBookCtrl.adult);
             console.log(flightBookCtrl.children);
             console.log(flightBookCtrl.infant);
             console.log(flightBookCtrl.message);
             console.log(flightBookCtrl.phoneNo);
+            var response = FlightService.bookFlightTicket(flightBookCtrl.departureTime, flightBookCtrl.class, flightBookCtrl.adult, flightBookCtrl.children, flightBookCtrl.infant, flightBookCtrl.message, flightBookCtrl.phoneNo)
+            response.then(result => {
+                console.log(result);
+                $state.go('home');
+                swal("Ticket booked Successfully!", "Click the Below Button!", "success");
+            })
+            .catch(err => {
+                console.log(err);
+            });
         }
     }
 })();

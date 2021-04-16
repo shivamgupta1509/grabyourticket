@@ -176,15 +176,42 @@ app.post("/book_ticket", (req, res) => {
         no_of_infants : no_of_infants
     });
 
-    Ticket.create(TicketData, (err, bookingRequest) => {
+});
+
+app.post("/book_flight_ticket",(req, res)=>{
+    console.log("Inside route...");
+    var Departure_time = req.body.departureTime;
+    var Class = req.body.class;
+    var no_of_adults = req.body.adult;
+    var no_of_childrens = req.body.children;
+    var no_of_infants = req.body.infant;
+    var Phone_number = req.body.phoneNo;;
+    var message = req.body.message;
+
+    console.log(".........................", Departure_time);
+
+    var FlightTicketData = new Ticket({
+        Departure_time : Departure_time,
+        Class : Class,
+        no_of_adults : no_of_adults,
+        no_of_childrens : no_of_childrens,
+        no_of_infants : no_of_infants,
+        message : message,
+        Phone_number : Phone_number
+    });
+
+    console.log(FlightTicketData);
+
+    Ticket.create(FlightTicketData, (err, bookingRequest) => {
         if(err){
-            console.log(TicketData);
+            console.log(FlightTicketData);
 
             console.log("Oops! Something went wrong...");
             console.log(err);
         }
         else{
-            console.log("Successfully booked your ticket...");
+            // console.log("Successfully booked your ticket...");
+            res.send({data : bookingRequest});
         }
     });
 });
