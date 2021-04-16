@@ -11,13 +11,15 @@ var unirest = require("unirest");
 const session = require("express-session");
 var unirest = require("unirest");
 const destinationId = require("./hotelDestinationId.json");
+const ObjectId = require("mongoose").Types.ObjectId;
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 var PORT = 5000;
+var userId = "";
 
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
@@ -156,62 +158,141 @@ app.post("/book_ticket", (req, res) => {
     var no_of_infants = req.body.Infant
 
     var TicketData = new Ticket({
-        Train_name : Train_name,
-        from : from,
-        to : to,
-        Departure_date : Departure_date,
-        Departure_time : Departure_time,
-        Class : Class,
-        Full_name : Full_name,
-        Phone_number : Phone_number,
-        email : email,
-        Hotel_name : Hotel_name,
-        Arrival_date : Arrival_date,
-        Arrival_time : Arrival_time,
-        Room_type : Room_type,
-        Airline_name : Airline_name,
+        Train_name: Train_name,
+        from: from,
+        to: to,
+        Departure_date: Departure_date,
+        Departure_time: Departure_time,
+        Class: Class,
+        Full_name: Full_name,
+        Phone_number: Phone_number,
+        email: email,
+        Hotel_name: Hotel_name,
+        Arrival_date: Arrival_date,
+        Arrival_time: Arrival_time,
+        Room_type: Room_type,
+        Airline_name: Airline_name,
         booking_type: booking_type,
-        no_of_adults : no_of_adults,
-        no_of_childrens : no_of_childrens,
-        no_of_infants : no_of_infants
+        no_of_adults: no_of_adults,
+        no_of_childrens: no_of_childrens,
+        no_of_infants: no_of_infants
     });
 
 });
 
-app.post("/book_flight_ticket",(req, res)=>{
-    console.log("Inside route...");
+app.post("/book_flight_ticket", (req, res) => {
+    var airlineName = req.body.airlineName;
+    var sourceName = req.body.sourceName;
+    var destinationName = req.body.destinationName;
+    var date = req.body.date;
     var Departure_time = req.body.departureTime;
     var Class = req.body.class;
     var no_of_adults = req.body.adult;
     var no_of_childrens = req.body.children;
     var no_of_infants = req.body.infant;
-    var Phone_number = req.body.phoneNo;;
+    var Phone_number = req.body.phoneNo;
     var message = req.body.message;
 
-    console.log(".........................", Departure_time);
-
+    user = ObjectId(userId);
     var FlightTicketData = new Ticket({
-        Departure_time : Departure_time,
-        Class : Class,
-        no_of_adults : no_of_adults,
-        no_of_childrens : no_of_childrens,
-        no_of_infants : no_of_infants,
-        message : message,
-        Phone_number : Phone_number
+        Airline_name: airlineName,
+        from: sourceName,
+        to: destinationName,
+        Departure_date: date,
+        Departure_time: Departure_time,
+        Class: Class,
+        no_of_adults: no_of_adults,
+        no_of_childrens: no_of_childrens,
+        no_of_infants: no_of_infants,
+        message: message,
+        Phone_number: Phone_number,
+        userId: user
     });
 
-    console.log(FlightTicketData);
-
     Ticket.create(FlightTicketData, (err, bookingRequest) => {
-        if(err){
+        if (err) {
             console.log(FlightTicketData);
 
             console.log("Oops! Something went wrong...");
             console.log(err);
         }
-        else{
+        else {
             // console.log("Successfully booked your ticket...");
-            res.send({data : bookingRequest});
+            res.send({ data: bookingRequest });
+        }
+    });
+});
+
+app.post("/book_train_ticket", (req, res) => {
+    var trainName = req.body.trainName;
+    var trainNumber = req.body.trainNumber;
+    var sourceName = req.body.sourceName;
+    var destinationName = req.body.destinationName;
+    var date = req.body.date;
+    var Departure_time = req.body.departTime;
+    var Class = req.body.class;
+    var no_of_adults = req.body.adult;
+    var no_of_childrens = req.body.children;
+    var no_of_infants = req.body.infant;
+    var Phone_number = req.body.phoneNo;
+
+    user = ObjectId(userId);
+    var TrainTicketData = new Ticket({
+        Train_name: trainName,
+        Train_number: trainNumber,
+        from: sourceName,
+        to: destinationName,
+        Departure_date: date,
+        Departure_time: Departure_time,
+        Class: Class,
+        no_of_adults: no_of_adults,
+        no_of_childrens: no_of_childrens,
+        no_of_infants: no_of_infants,
+        Phone_number: Phone_number,
+        userId: user
+    });
+
+    Ticket.create(TrainTicketData, (err, bookingRequest) => {
+        if (err) {
+            console.log(TrainTicketData);
+
+            console.log("Oops! Something went wrong...");
+            console.log(err);
+        }
+        else {
+            // console.log("Successfully booked your ticket...");
+            res.send({ data: bookingRequest });
+        }
+    });
+});
+
+app.post("/book_hotel", (req, res) => {
+    var hotelName = req.body.hotelName;
+    var checkInDate = req.body.checkInDate;
+    var checkInTime = req.body.checkInTime;
+    var room = req.body.room;
+    var Phone_number = req.body.phoneNo;
+
+    user = ObjectId(userId);
+    var hotelData = new Ticket({
+        Hotel_name: hotelName,
+        Arrival_date: checkInDate,
+        Arrival_time: checkInTime,
+        Room_type: room,
+        Phone_number: Phone_number,
+        userId: user
+    });
+
+    Ticket.create(hotelData, (err, bookingRequest) => {
+        if (err) {
+            console.log(hotelData);
+
+            console.log("Oops! Something went wrong...");
+            console.log(err);
+        }
+        else {
+            // console.log("Successfully booked your ticket...");
+            res.send({ data: bookingRequest });
         }
     });
 });
@@ -249,6 +330,7 @@ app.post("/login", (req, res) => {
         } else {
             passport.authenticate("local")(req, res, () => {
                 req.session.user = req.user;
+                userId = req.session.user._id
                 res.send({ login: true, user: req.session.user.username, fullName: req.session.user.fullname });
             })
         }
