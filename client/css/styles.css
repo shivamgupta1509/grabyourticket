@@ -506,3 +506,7 @@ ___________________________________Booking History Page_________________________
 .booking-history-overlap{
   transform: translate(0px, -200px);
 }
+.booking-history-card-body{
+  color:white; 
+  background-image:url("../images/card-image-dark.jpg");
+}
