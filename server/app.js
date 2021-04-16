@@ -45,6 +45,17 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.get("/history", (req, res) => {
+    console.log(userId == ObjectId(userId));
+    Ticket.find({ userId: userId }, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(result);
+            res.send({ result: result });
+        }
+    })
+})
 
 app.post("/search-train", (req, res) => {
     var d = new Date(req.body.date)
@@ -137,48 +148,6 @@ app.post("/search_hotel", (req, res) => {
     });
 });
 
-app.post("/book_ticket", (req, res) => {
-    var booking_type = req.body.booking_type;
-    var Full_name = req.body.FullName;
-    var Phone_number = req.body.PhoneNumber;
-    var email = req.body.Email;
-    var from = req.body.from;
-    var to = req.body.to;
-    var Departure_date = req.body.DepartureDate;
-    var Departure_time = req.body.DepartureTime;
-    var Arrival_date = req.body.ArrivalDate;
-    var Arrival_time = req.body.ArrivalTime;
-    var Train_name = req.body.TrainName;
-    var Hotel_name = req.body.HotelName;
-    var Airline_name = req.body.AirlineName;
-    var Class = req.body.Class;
-    var Room_type = req.body.RoomType;
-    var no_of_adults = req.body.Adult;
-    var no_of_childrens = req.body.Children;
-    var no_of_infants = req.body.Infant
-
-    var TicketData = new Ticket({
-        Train_name: Train_name,
-        from: from,
-        to: to,
-        Departure_date: Departure_date,
-        Departure_time: Departure_time,
-        Class: Class,
-        Full_name: Full_name,
-        Phone_number: Phone_number,
-        email: email,
-        Hotel_name: Hotel_name,
-        Arrival_date: Arrival_date,
-        Arrival_time: Arrival_time,
-        Room_type: Room_type,
-        Airline_name: Airline_name,
-        booking_type: booking_type,
-        no_of_adults: no_of_adults,
-        no_of_childrens: no_of_childrens,
-        no_of_infants: no_of_infants
-    });
-
-});
 
 app.post("/book_flight_ticket", (req, res) => {
     var airlineName = req.body.airlineName;
@@ -206,7 +175,8 @@ app.post("/book_flight_ticket", (req, res) => {
         no_of_infants: no_of_infants,
         message: message,
         Phone_number: Phone_number,
-        userId: user
+        userId: user,
+        Booking_type: "Flight"
     });
 
     Ticket.create(FlightTicketData, (err, bookingRequest) => {
@@ -249,7 +219,8 @@ app.post("/book_train_ticket", (req, res) => {
         no_of_childrens: no_of_childrens,
         no_of_infants: no_of_infants,
         Phone_number: Phone_number,
-        userId: user
+        userId: user,
+        Booking_type: "Train"
     });
 
     Ticket.create(TrainTicketData, (err, bookingRequest) => {
@@ -280,7 +251,8 @@ app.post("/book_hotel", (req, res) => {
         Arrival_time: checkInTime,
         Room_type: room,
         Phone_number: Phone_number,
-        userId: user
+        userId: user,
+        Booking_type: "Hotel"
     });
 
     Ticket.create(hotelData, (err, bookingRequest) => {

@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const user = require("./users");
 
 TicketSchema = new mongoose.Schema({
+  Booking_type: String,
   Train_name: String,
   Train_number: String,
   from: String,
