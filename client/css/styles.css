@@ -76,7 +76,7 @@ body {
 }
 
 #grab-your-ticket-bus {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .grab-your-ticket-bus-cards .card {
@@ -107,6 +107,10 @@ body {
 
 #bus-qna {
   margin-top: 60px;
+}
+
+#bus-qna :hover {
+  transform: none !important;
 }
 
 .bus-faq-heading {
@@ -398,17 +402,111 @@ ___________________________________Login Page / SignUp Page_____________________
 /* ****************************************************************************************************
 ___________________________________Train Search Result Page____________________________________________
 **************************************************************************************************** */
-.train_search_div_1{
+.train_search_div_1 {
   height: 450px;
-  color:aqua;
+  color: aqua;
   background-image: url("../images/train_search_result.png");
   background-repeat: no-repeat;
   background-position: 460px 100px;
   background-color: #1f547a;
 }
-.train_search_div_2{
+.train_search_div_2 {
   background-color: rgb(253, 250, 245);
 }
-.list-input{
-  width:50px;
+.list-input {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.list-input_train {
+  width: 50px;
+}
+/* ****************************************************************************************************
+___________________________________Flight Search Result Page____________________________________________
+**************************************************************************************************** */
+.flight_search_main_div {
+  background-image: url("../images/flight_search_result.jpg");
+  background-repeat: no-repeat;
+  background-position: 0px -150px;
+  padding-bottom: 150px;
+}
+.flight_search_div_1 {
+  background-position: 0px 200px;
+  color: white;
+}
+.flight_search_div_2 {
+  transform: translate(0px, 80px);
+}
+.list-input_flight {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.flight_search_div_2 {
+  margin-bottom: 30px;
+}
+/* ****************************************************************************************************
+___________________________________Hotel Search Result Page____________________________________________
+**************************************************************************************************** */
+.hotel_search_main_div{
+  background-image: url("https://image.freepik.com/free-vector/hotel-building-isolated-city-street-vector-illustration-flat-cartoon_101884-680.jpg");
+  background-repeat: no-repeat;
+  background-position: 790px 60px;;
+  padding-bottom: 150px;
+
+}
+.hotel_search_div_1{
+  transform: translate(50px, -80px);
+}
+.hotel_search_div_2{
+  transform: translate(0px, -80px);
+}
+.hotel_search_div_2 .card{
+    margin-bottom: 30px;
+}
+.hotel_search_div_2 a{
+  text-decoration:none;
+  color:black;
+}
+.hotel_search_div_1 h1{
+  color: #61085c;
+}
+.hotel_search_div_1 h3{
+  color:#f57a00;
+}
+.hotel_search_div_1 h2{
+  color:#0d71a3;
+}
+h3 .fas-star-icon{
+  margin-top: 10px;
+  margin-bottom: 10px;;
+  color:yellow; 
+  text-shadow: 0 0 3px #000;
+  font-size: 30px;
+}
+.hotel-star-div{
+  background-color: black; 
+  opacity: 0.8;
+  border-radius: 10px;;
+}
+.hotel-search-result-card{
+  border-radius: 10px;
+}
+.hotel-search-result-card:hover {
+  transform: scale(1.01);
+}
+/* ****************************************************************************************************
+___________________________________Booking History Page____________________________________________
+**************************************************************************************************** */
+.booking-history-div{
+  background-image: url("https://www.serverless360.com/wp-content/uploads/2019/07/cab-booking-event-grid-01.png");
+  opacity: 0.2;
+  height: 300px;;
+}
+.booking-history-overlap{
+  transform: translate(0px, -200px);
+}
+.booking-history-card-body{
+  color:white; 
+  background-image:url("../images/card-image-dark.jpg");
 }

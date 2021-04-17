@@ -1,0 +1,84 @@
+<div class="container">
+  <!--container-->
+
+  <form name="myForm" class="form-group" ng-submit="flightBookCtrl.book();" method="post"
+    style="background-color: #000;color:#fff;height: 640px;width: 700px;margin: auto;padding: 20px;opacity: 0.7;">
+    <!--form-->
+    <h1 class="text-center">Flight Booking Form</h1>
+
+    <div id="form">
+      <!--form-->
+      <h3 style="border-bottom: 2px solid #3399ff;width: 210px;padding: 5px;" class="text-white">Booking Details</h3>
+
+      <div id="input">
+        <!--input-->
+        <input type="text" ng-model="flightBookCtrl.sourceName" ng-disabled="flightBookCtrl.sourceName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="From" name="from">
+        <input type="text" ng-model="flightBookCtrl.destinationName" ng-disabled="flightBookCtrl.destinationName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="To" name="to">
+        <input type="text" ng-model="flightBookCtrl.date" ng-disabled="flightBookCtrl.date"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Departure Date" name="DeapartureDate">
+        <input type="text" ng-model="flightBookCtrl.departureTime" style=" width: 300px;margin: 5px;border-top: none;border-left: none; border-right: none;outline:
+          none;background: transparent;color: #fff;" placeholder="Departure Time" name="DepartureTime">
+        <input type="text" ng-model="flightBookCtrl.airlineName" ng-disabled="flightBookCtrl.airlineName"
+          style="width: 300px; margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Airline Name" name="AirlineName">
+
+        <select ng-model="flightBookCtrl.class"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent; background-color:black;color: #fff;"
+          name="Class">
+          <option value="">Preferred Class</option>
+          <option value="Economy">Economy</option>
+          <option value="Premium Economy">Premium Economy</option>
+          <option value="Business">Business</option>
+          <option value="First">First</option>
+        </select>
+      </div>
+      <!--input-->
+
+      <div id="input2">
+        <!--input2-->
+        <input type="number" ng-model="flightBookCtrl.adult"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Adult" name="Adult">
+        <input type="number" ng-model="flightBookCtrl.children"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Children(2-11years)" name="Children">
+        <input type="number" ng-model="flightBookCtrl.infant"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Infant(under 2years)" name="Infant">
+      </div>
+
+      <div id="input5">
+        <!--input5-->
+        <h3 class="text-white" style="border-bottom: 2px solid #3399ff;
+          width: 220px;
+          padding: 5px;">Personal Details</h3>
+      </div>
+      <!--input5-->
+
+      <div id="input6">
+        <!--input6-->
+        <input type="text" ng-model="flightBookCtrl.fullName" ng-disabled="flightBookCtrl.fullName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Full Name" name="FullName">
+        <input type="text" ng-model="flightBookCtrl.phoneNo"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Phone Number" name="PhoneNumber">
+        <input type="email" ng-model="flightBookCtrl.email" ng-disabled="flightBookCtrl.email"
+          style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Email" name="Email">
+      </div>
+      <!--input6-->
+      <button type="submit" class="btn btn-warning text-white"><b>Submit Form</b></button>
+    </div>
+    <!--form-->
+
+  </form>
+  <!--form-->
+
+</div>
+<!--container-->

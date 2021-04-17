@@ -1,0 +1,85 @@
+<div class="container">
+  <!--container-->
+
+  <form name="myForm" class="form-group" ng-submit="trainBookCtrl.book();" method="post"
+    style="background-color: #000;color:#fff;height: 550px;width: 700px;margin: auto;padding: 20px;opacity: 0.7;">
+    <!--form-->
+    <h1 class="text-center">Train Booking Form</h1>
+
+    <div id="form">
+      <!--form-->
+      <h3 style="border-bottom: 2px solid #3399ff;width: 210px;padding: 5px;" class="text-white">Booking Details</h3>
+
+      <div id="input">
+        <!--input-->
+        <input type="text" ng-model="trainBookCtrl.sourceName" ng-disabled="trainBookCtrl.sourceName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="From" name="from">
+        <input type="text" ng-model="trainBookCtrl.destinationName" ng-disabled="trainBookCtrl.destinationName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="To" name="to">
+        <input type="text" ng-model="trainBookCtrl.date" ng-disabled="trainBookCtrl.date"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Departure Date" name="DeapartureDate">
+        <input type="text" ng-model="trainBookCtrl.departTime" ng-disabled="trainBookCtrl.departTime"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none; border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Departure Time" name="DepartureTime">
+        <input type="text" ng-model="trainBookCtrl.trainName" ng-disabled="trainBookCtrl.trainName"
+          style="width: 300px; margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Train Name or Number" name="TrainName">
+
+        <select ng-model="trainBookCtrl.class"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent; background-color:black;color: #fff;"
+          name="Class">
+          <option value="">Preferred Seating</option>
+          <option value="General">General Class</option>
+          <option value="Sleeper">Sleeper Class</option>
+          <option value="AC-3tier">AC-3tier Class</option>
+          <option value="AC-2tier">AC-2tier Class</option>
+          <option value="AC-1tier">AC-1tier Class</option>
+        </select>
+      </div>
+      <!--input-->
+
+      <div id="input2">
+        <!--input2-->
+        <input type="number" ng-model="trainBookCtrl.adult"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Adult" name="Adult">
+        <input type="number" ng-model="trainBookCtrl.children"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Children(2-11years)" name="Children">
+        <input type="number" ng-model="trainBookCtrl.infant"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Infant(under 2years)" name="Infant">
+      </div>
+
+      <div id="input5">
+        <!--input5-->
+        <h3 class="text-white" style="border-bottom: 2px solid #3399ff;
+          width: 220px;
+          padding: 5px;">Personal Details</h3>
+      </div>
+      <!--input5-->
+
+      <div id="input6">
+        <!--input6-->
+        <input type="text" ng-model="trainBookCtrl.fullName" ng-disabled="trainBookCtrl.fullName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Full Name" name="FullName">
+        <input type="Text" ng-model="trainBookCtrl.phoneNo"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Phone Number" name="PhoneNumber">
+        <input type="email" ng-model="trainBookCtrl.email" ng-disabled="trainBookCtrl.email"
+          style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Email" name="Email">
+      </div>
+      <!--input6-->
+      <button type="submit" class="btn btn-warning text-white"><b>Submit Form</b></button>
+    </div>
+    <!--form-->
+  </form>
+  <!--form-->
+
+</div>
+<!--container-->

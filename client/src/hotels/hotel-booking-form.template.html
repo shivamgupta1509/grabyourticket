@@ -1,0 +1,87 @@
+<div class="container">
+  <!--container-->
+
+  <form name="myForm" class="form-group" ng-submit="hotelBookCtrl.book();" method="post"
+    style="background-color: #000;color:#fff;height: 555px;width: 700px;margin: auto;padding: 20px;opacity: 0.7;">
+    <!--form-->
+    <h1 class="text-center">Hotel Booking Form</h1>
+
+    <div id="form">
+      <!--form-->
+      <h3 style="border-bottom: 2px solid #3399ff;width: 210px;padding: 5px;" class="text-white">Booking Details</h3>
+
+      <div id="input">
+        <!--input-->
+        <input type="text" ng-model="hotelBookCtrl.checkInDate" ng-disabled="hotelBookCtrl.checkInDate"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="CheckIn Date" name="CheckInDate">
+        <input type="text" ng-model="hotelBookCtrl.checkInTime"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="CheckIn Time" name="CheckInTime">
+        <input type="text" ng-model="hotelBookCtrl.checkOutDate" ng-disabled="hotelBookCtrl.checkOutDate"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="CheckOut Date" name="CheckOutDate">
+        <input type="text" ng-model="hotelBookCtrl.checkOutTime"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none; border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="CheckOut Time" name="CheckOutTime">
+        <input type="text" ng-model="hotelBookCtrl.hotelName" ng-disabled="hotelBookCtrl.hotelName"
+          style="width: 300px; margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Hotel Name" name="HotelName">
+
+        <select ng-model="hotelBookCtrl.room"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent; background-color:black;color: #fff;"
+          name="RoomType">
+          <option value="">Preferred Room</option>
+          <option value="Standard Room">Standard Room(1 to 2 people)</option>
+          <option value="Family Room">Family Room(1 to 4 people)</option>
+          <option value="Private Room">Private Room(1 to 3 people)</option>
+          <option value="Mix Dorm Room">Mix Dorm Room(1 to 6 people)</option>
+        </select>
+      </div>
+      <!--input-->
+
+      <div id="input2">
+        <!--input2-->
+        <input type="number" ng-model="hotelBookCtrl.adult"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Adult" name="Adult">
+        <input type="number" ng-model="hotelBookCtrl.children"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Children(2-11years)" name="Children">
+        <input type="number" ng-model="hotelBookCtrl.infant"
+          style="width: 195px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Infant(under 2years)" name="Infant">
+      </div>
+      <!--input2-->
+      <!--input4-->
+
+      <div id="input5">
+        <!--input5-->
+        <h3 class="text-white" style="border-bottom: 2px solid #3399ff;
+          width: 220px;
+          padding: 5px;">Personal Details</h3>
+      </div>
+      <!--input5-->
+
+      <div id="input6">
+        <!--input6-->
+        <input type="text" ng-model="hotelBookCtrl.fullName" ng-disabled="hotelBookCtrl.fullName"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Full Name" name="FullName">
+        <input type="Text" ng-model="hotelBookCtrl.phoneNo"
+          style="width: 300px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Phone Number" name="PhoneNumber">
+        <input type="email" ng-model="hotelBookCtrl.email" ng-disabled="hotelBookCtrl.email"
+          style="width: 615px;margin: 5px;border-top: none;border-left: none;border-right: none;outline: none;background: transparent;color: #fff;"
+          placeholder="Email" name="Email">
+      </div>
+      <!--input6-->
+      <button type="submit" class="btn btn-warning text-white"><b>Submit Form</b></button>
+    </div>
+    <!--form-->
+
+  </form>
+  <!--form-->
+
+</div>
+<!--container-->

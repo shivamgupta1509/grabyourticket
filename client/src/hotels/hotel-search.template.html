@@ -12,23 +12,44 @@
                         <div class="col-10 offset-1">
                             <div class="d-flex" id="hotel_search_flex">
                                 <div class="col-12">
-                                    <form class="form-floating" class="" id="" method="">
+                                    <form class="form-floating" class="" id="" ng-submit="hotelCtrl.searchHotel();"
+                                        method="POST">
                                         <div class="row justify-content-center">
                                             <div class="col-3 search_block">
                                                 <label class="form-label" for="location_search"><i
                                                         class="fas fa-city"></i> Enter City name, Location :</label>
-                                                <input class="form-control" id="location_search" name="location_search"
-                                                    type="text">
+                                                <input list="source-cities" class="form-control"
+                                                    ng-model="hotelCtrl.location" id="location_search"
+                                                    name="location_search" type="text">
+                                                <datalist id="source-cities">
+                                                    <option value="Mumbai"></option>
+                                                    <option value="Pune"></option>
+                                                    <option value="Mahabaleshwar"></option>
+                                                    <option value="Ahmedabad"></option>
+                                                    <option value="Jaipur"></option>
+                                                    <option value="Udaipur"></option>
+                                                    <option value="New Delhi"></option>
+                                                    <option value="Agra"></option>
+                                                    <option value="Varanasi"></option>
+                                                    <option value="Gorakhpur"></option>
+                                                    <option value="Allahabad"></option>
+                                                    <option value="Dwarka"></option>
+                                                    <option value="Mathura"></option>
+                                                    <option value="Vrindavan"></option>
+                                                    <option value="Manali"></option>
+                                                </datalist>
                                             </div>
                                             <div class="col-3 search_block">
                                                 <label class="form-label" for="check_in"><i
                                                         class="far fa-calendar-alt"></i> Check-in:</label>
-                                                <input class="form-control" id="check_in" name="check_in" type="date">
+                                                <input class="form-control" ng-model="hotelCtrl.checkIn" id="check_in"
+                                                    name="check_in" type="date">
                                             </div>
                                             <div class="col-3 search_block">
                                                 <label class="form-label" for="check_out"><i
                                                         class="far fa-calendar-alt"></i> Check-out:</label>
-                                                <input class="form-control" id="check_out" name="check_out" type="date">
+                                                <input class="form-control" ng-model="hotelCtrl.checkOut" id="check_out"
+                                                    name="check_out" type="date">
                                             </div>
                                             <div class="col-3  align-self-center">
                                                 <button type="submit" class="btn btn-lg btn-primary" id="search_hotel"
@@ -46,6 +67,9 @@
         </div>
     </div>
 </header>
+
+<ui-view></ui-view>
+
 <section>
     <div class="container-fluid">
         <div class="row">
